@@ -278,3 +278,57 @@ o box-sizing: border-box faz ele manter os 400px */
     margin: 5px 10px 15px 20px;
     /* top/right/bottom/left */
 }
+
+/* Box model */
+
+.box-model{
+    margin: 20px;
+    padding: 15px 25px;
+    border: 3px solid #835;
+    border-radius: 7px;
+    width: 200px;
+    height: 400px;
+}
+
+/* Desafio 03 */
+#df3-box-model{
+    background-color: #835;
+    margin: 20px;
+    padding: 20px 10px;
+    border: 10px solid #00eaff;
+    outline: 10px solid #a5f;
+
+}
+
+.df3-h2{
+    color: #22ca20;
+    background-color: #000;
+    border: none;
+
+}
+
+/* Alinhamento de texto */
+.text-aligned{
+    text-align: right;
+}
+
+.container-center{
+    text-align: center;
+    width: 300px;
+    border: 1px solid red;
+}
+
+/* Decoraçao de texto */
+
+.underline{
+    text-decoration: underline;
+}
+
+.line-trough{
+    text-decoration: line-through;
+}
+
+.remove-underline{
+    text-decoration: none;
+    color:#000;   
+}
