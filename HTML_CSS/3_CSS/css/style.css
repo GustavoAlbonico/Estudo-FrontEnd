@@ -7,9 +7,9 @@ h3{
     color: green;
 }
 
-p{
-    /* color: blueviolet; */
-}
+/* p{
+    color: blueviolet;
+} */
 
 /* classes */
 .paragraph{
@@ -178,4 +178,103 @@ h2{
     padding-left: 10px;
     padding-right: 20px;
     padding-bottom: 40px;
+}
+
+/* shorthand padding */
+
+.shorthand-padding{
+    background-color: #444;
+    padding: 5px 12px 18px 24px; 
+        /* top/right/bottom/left */
+}
+
+.shorthand-padding-2{
+    background-color: #444;
+    padding: 10px 20px;
+    /* padding: 10px 20px 10px 20px;  */
+}
+
+/* padding com with */
+/* se o elemento tem 400px e o padding 50px o elemento fica 450px
+o box-sizing: border-box faz ele manter os 400px */
+
+.without-border-box{
+    background-color: #444;
+    color:#fff;
+    width: 400px;
+    padding: 50px;
+}
+
+.border-box{
+    background-color: #7a7676;
+    color:#fff;
+    width: 400px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+/* Border */
+
+.border{
+    border:5px solid red;
+     /* largura/aparencia/cor */
+     padding: 10px;
+}
+
+.border-2{
+    border:2px dotted #931;
+    padding: 10px
+}
+
+/* Border individual */
+
+.border-left{
+    border-left: 3px solid red;
+    background-color: #22ca20;
+    padding: 25px;
+}
+
+.border-bottom{
+    border-bottom: 5px double red;
+    background-color: #00eaff;
+    padding: 30px;
+}
+
+/* Border-radius */
+
+/* Se tem border ele mexe com o border e com o padding */
+.border-radius{
+    border: 5px solid blue;
+    background-color: #000;
+    color: #24ce55;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* Se nao tem border ele mexe meio q diretamente com o padding */
+.border-radius-2{
+    background-color: #000;
+    color: #24ce55;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+/* Margin */
+/* background-color nao pega na margin */
+.margin{
+    margin: 10px;
+    background-color: #888;
+
+}
+
+.margin-top{
+    margin-top: 50px;
+    background-color: #931;
+    padding: 10px;
+}
+
+.margin-shorhand{
+    background-color: #22ca20;
+    margin: 5px 10px 15px 20px;
+    /* top/right/bottom/left */
 }
