@@ -424,3 +424,86 @@ o box-sizing: border-box faz ele manter os 400px */
     display: block;
     margin: 10px;
 }
+
+/* Escondendo elementos */
+
+.invisible{
+   display: none; 
+}
+
+/* Static */
+
+.static{
+    position: static;
+    background-color: #931;
+    color: #fff;
+    height: 100px;
+    width: 100px;
+}
+
+/* Relative */
+
+.relative{
+    position: relative;
+    background-color: #224;
+    color: #fff;
+    height: 100px;
+    width: 100px;
+    top: 100px;
+    left: 40px;
+}
+
+/* Absolute  */
+
+.absolute{
+    position: absolute;
+    background-color: #652;
+    color: #fff;
+    height: 100px;
+    width: 100px;
+    top: 2px;
+    right: 2px;
+
+    /* esta no canto direito em cima da tela literalmente */
+}
+
+/* Absolute e relative */
+
+.relative-container{
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    margin-top: 120px;
+    position: relative;
+}
+
+.absolute-1,
+.absolute-2{
+    width: 50px;
+    height: 50px;
+    background-color: #442;
+    position: absolute;
+}
+
+.absolute-1{
+    top: 10px;
+    left: 10px;
+}
+
+.absolute-2{
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Fixed */
+
+.fixed{
+    width: 600px;
+    height: 50px;
+    background-color: #851;
+    border: 1px solid blue;
+    position: fixed;
+    top: 20px;
+    left: 30px;
+
+}
