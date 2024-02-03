@@ -175,7 +175,7 @@ html{
     margin: 0px;
 }
 
-.name-uppercase{
+.name-uppercase-bold{
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -193,21 +193,6 @@ html{
     position: absolute;
 }
 
-.hability-value-1{
-   top: 25px;
-   left: 200px;
-}
-
-.hability-value-2{
-    top: 25px;
-    left: 400px;
-}
-
-.hability-value-3{
-    top: 25px;
-    left: 650px;
-}
-
 .hability-value-1 span,
 .hability-value-2 span,
 .hability-value-3 span,
@@ -217,6 +202,21 @@ html{
     color: #9797fc;
     font-weight: bold; 
 }
+
+.hability-value-1{
+    top: 25px;
+    left: 200px;
+ }
+ 
+ .hability-value-2{
+     top: 25px;
+     left: 400px;
+ }
+ 
+ .hability-value-3{
+     top: 25px;
+     left: 650px;
+ }
 
 .hability-value-4{
     top: 178px;
