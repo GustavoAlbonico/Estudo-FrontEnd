@@ -16,16 +16,163 @@
                 <p>Formulário</p>
             </div>
             <div class="form-body">
-                <h1 class="form-title">Conheça o amor da sua vida rapidamente</h1>
+                <h1 class="form-title">Conheça o amor da sua vida rapidamente!</h1>
                 <p>
                 Descreva as caracteríscas e marque os opcionais de acordo como você é
                 </p>
-                <div class="box-input">
-                    <label for="surname">Apelido <span class="required-field">*</span></label>
-                    <input type="text" name="surname" id="surname" class="block" placeholder="apelido carinhoso nome">
-                </div>
+                <form>
+                    <div class="box-input">
+                        <label for="surname">Apelido <span class="required-field">*</span></label>
+                        <input 
+                        type="text" 
+                        name="surname" 
+                        id="surname" 
+                        class="block" 
+                        placeholder="apelido carinhoso/nome"
+                        minlength="1"
+                        maxlength="15"
+                        required/>
+                    </div>
+                    <div class="box-input">
+                        <label for="birthday"
+                        >Data de nascimento: <span class="required-field">*</span></label>
+                        <input
+                        type="date"
+                        name="birthday"
+                        id="birthday"
+                        class="block"
+                        required/> 
+                    </div>
+                    <div class="box-input">
+                        <label for="hight"
+                        >Altura: <span class="required-field">*</span></label>
+                        <input
+                        type="number"
+                        name="hight"
+                        id="hight"
+                        class="block"
+                        placeholder="Informe a sua altura ex:1.85"
+                        required/>
+                    </div>
+                    <div class="box-input">
+                        <p>Sou:<span class="required-field">*</span></p>
+                        <input type="radio" id="man" name="sex"/>
+                        <label for="man">Homem</label>
+                        <input type="radio" id="women" name="sex"/>
+                        <label for="women">Mulher</label>
+                    </div>
+                    <div class="box-input">
+                        <p>Orientação Sexual:<span class="required-field">*</span></p>
+                        <input type="radio" id="heterossexual" name="sexual-orientation"/>
+                        <label for="heterossexual">Heterossexual</label>
+                        <input type="radio" id="homossexual" name="sexual-orientation"/>
+                        <label for="homossexual">Homossexual</label>
+                        <input type="radio" id="bissexual" name="sexual-orientation"/>
+                        <label for="bissexual">Bissexual</label>
+                        <input type="radio" id="assexual" name="sexual-orientation"/>
+                        <label for="assexual">Assexual</label>
+                        <input type="radio" id="pansexual" name="sexual-orientation"/>
+                        <label for="pansexual">Pansexual</label>
+                    </div>
+                    <div class="box-input">
+                        <label for="description"
+                        >Descrição:<span class="required-field">*</span></label>
+                        <textarea
+                        name="description"
+                        id="description"
+                        class="block"
+                        placeholder="Fale um pouco sobre você"
+                        minlength="20"
+                        maxlength="500"
+                        required></textarea>
+                    </div>
+                    <div class="box-input">
+                        <p>Fotos: <span class="required-field"></span></p>
+                        <input type="file" multiple accept="image.png, image.jpg" id="images" required>
+                    </div>
+                    <p>
+                        Informe quais são suas preferências marcando e informando as opções abaixo:
+                    </p>
+                    <div class="box-input">
+                        <label for="max-distance">Distância até <span class="bold" id="maxDistance"></span>km.</label>
+                        <input type="range" name="max-distance" id="idMaxDistance" class="block" min="0" max="100" step="1" oninput="mudaValor()" value="0"/>
+                    </div>
+                    <div class="box-input">
+                        <label for="min-high">Altura minima:(<span class="bold" id="minHigh"></span>m)</label>
+                        <input type="range" name="min-high" id="idMinHigh" class="block" min="0" max="2.20" step="0.01" oninput="mudaValor()" value="0.00"/>
+                    </div>
+                    <div class="box-input">
+                        <label for="max-high">Altura maxima:(<span class="bold" id="maxHigh"></span>m)</label>
+                        <input type="range" name="max-high" id="idMaxHigh" class="block" min="0" max="2.20" step="0.01" oninput="mudaValor()" value="0.00"/>
+                    </div>
+                    <div class="optional-box">
+                        <p>Cor de cabelo:</p>
+                        <ul class="optional-list">
+                            <li>
+                                <input 
+                                 type="checkbox"
+                                 id="loiro"
+                                 name="optional[]"
+                                 value="loiro"
+                                 />
+                                <label for="loiro">Loiro</label>
+                            </li>
+                            <li>
+                                <input 
+                                 type="checkbox"
+                                 id="moreno"
+                                 name="optional[]"
+                                 value="moreno"
+                                 />
+                                <label for="moreno">Moreno</label>
+                            </li>
+                            <li>
+                                <input 
+                                 type="checkbox"
+                                 id="ruivo"
+                                 name="optional[]"
+                                 value="ruivo"
+                                 />
+                                <label for="ruivo">Ruivo</label>
+                            </li>     
+                        </ul>
+                    </div>
+                    <div class="optional-box"> 
+                        <ul class="optional-list">  
+                            <li>
+                                <input 
+                                 type="checkbox"
+                                 id="castanho"
+                                 name="optional[]"
+                                 value="castanho"
+                                 />
+                                <label for="castanho">Castanho</label>
+                            </li>
+                            <li>
+                                <input 
+                                 type="checkbox"
+                                 id="solorido"
+                                 name="optional[]"
+                                 value="colorido"
+                                 />
+                                <label for="colorido">Colorido</label>
+                            </li>
+                            <li>
+                                <input 
+                                 type="checkbox"
+                                 id="outros"
+                                 name="optional[]"
+                                 value="outros"
+                                 />
+                                <label for="outros">Outros</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="submit" value="Enviar" class="btn-sumit"/>
+                </form>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
