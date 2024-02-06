@@ -1,0 +1,93 @@
+/* Geral */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica;
+    box-sizing: border-box;
+    /* para os inputs respeitar o tamanho maximo das divs pais */
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+p {
+    color: #70747a;
+}
+
+/* Navbar */
+
+.navbar-container{
+    width: 100%;
+    height: 63px;
+    background-color: rgba(0, 0, 0,0.7);
+}
+
+.nav{
+    position: relative;
+}
+
+.logo{
+    width: 132px;
+    margin-top: 20px;
+    margin-left: 6em;
+}
+
+.navbar-items{
+    position: absolute;
+    right: 0;
+    height: 63px;
+    line-height: 63px;
+    margin: 0 5rem 0 0;
+    display: inline-block;
+}
+
+.navbar-items li {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 3px;
+}
+
+.navbar-items a{
+    text-decoration: none;
+    transition: 0.5s;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.login-btn{
+    color: #fff;
+    background-color: #000;
+    padding: 12px 36px;
+}
+
+.explorer-btn{
+    color: #ddd;
+    border: 2px solid #ddd;
+    padding: 11px 17px;
+}
+
+.login-btn:hover{
+    background-color: #303238;
+}
+
+.explorer-btn:hover{
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Main banner */
+
+.main-banner{
+    background-image: url('../img/background-desktop.webp');
+    background-size:cover;
+    background-position:center;
+    padding: 20em 0 ;
+    position: relative;
+    z-index: -1;
+    top: -50px;
+    
+}
