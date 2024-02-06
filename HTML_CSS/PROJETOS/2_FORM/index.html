@@ -10,6 +10,7 @@
     <div class="container">
         <div class="header">
             <h3>Conheça a sua metade!</h3>
+            <img src="img/peepo-love.webp" alt="peepo love">
         </div>
         <div class="form-container">
             <div class="form-header">
@@ -93,17 +94,25 @@
                     <p>
                         Informe quais são suas preferências marcando e informando as opções abaixo:
                     </p>
-                    <div class="box-input">
-                        <label for="max-distance">Distância até <span class="bold" id="maxDistance"></span>km.</label>
+                    <div class="box-input-range">
+                        <label for="min-age">Idade minima:(<span class="bold" id="minAge"></span>)</label>
+                        <input type="range" name="min-age" id="idMinAge" class="block" min="18" max="100" step="1" oninput="mudaValor()" value="0.00"/>
+                    </div>
+                    <div class="box-input-range">
+                        <label for="max-age">Idade maxima:(<span class="bold" id="maxAge"></span>)</label>
+                        <input type="range" name="max-age" id="idMaxAge" class="block" min="18" max="100" step="1" oninput="mudaValor()" value="0.00"/>
+                    </div>
+                    <div class="box-input-range">
+                        <label for="min-high">Altura minima:(<span class="bold" id="minHigh"></span>)</label>
+                        <input type="range" name="min-high" id="idMinHigh" class="block" min="0.00" max="2.20" step="0.01" oninput="mudaValor()" value="0.00"/>
+                    </div>
+                    <div class="box-input-range">
+                        <label for="max-high">Altura maxima:(<span class="bold" id="maxHigh"></span>)</label>
+                        <input type="range" name="max-high" id="idMaxHigh" class="block" min="0.00" max="2.20" step="0.01" oninput="mudaValor()" value="0.00"/>
+                    </div>
+                    <div class="box-input-range-distance">
+                        <label for="max-distance">Distância até <span class="bold" id="maxDistance"></span>.</label>
                         <input type="range" name="max-distance" id="idMaxDistance" class="block" min="0" max="100" step="1" oninput="mudaValor()" value="0"/>
-                    </div>
-                    <div class="box-input">
-                        <label for="min-high">Altura minima:(<span class="bold" id="minHigh"></span>m)</label>
-                        <input type="range" name="min-high" id="idMinHigh" class="block" min="0" max="2.20" step="0.01" oninput="mudaValor()" value="0.00"/>
-                    </div>
-                    <div class="box-input">
-                        <label for="max-high">Altura maxima:(<span class="bold" id="maxHigh"></span>m)</label>
-                        <input type="range" name="max-high" id="idMaxHigh" class="block" min="0" max="2.20" step="0.01" oninput="mudaValor()" value="0.00"/>
                     </div>
                     <div class="optional-box">
                         <p>Cor de cabelo:</p>
@@ -168,7 +177,8 @@
                             </li>
                         </ul>
                     </div>
-                    <input type="submit" value="Enviar" class="btn-sumit"/>
+                    <input type="submit" value="Enviar" class="btn-submit"/>
+                    
                 </form>
             </div>
         </div>
