@@ -3,19 +3,22 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Helvetica;
+    font-family: Helvetica, sans-serif;
     box-sizing: border-box;
     /* para os inputs respeitar o tamanho maximo das divs pais */
+}
+body{
+    background-color: #000;
 }
 
 h1,
 h2,
 h3 {
-    color: #333;
+    color: #fff;
 }
 
 p {
-    color: #70747a;
+    color: #dadada;
 }
 
 /* Navbar */
@@ -29,11 +32,16 @@ p {
 .nav{
     position: relative;
 }
-
 .logo{
     width: 132px;
     margin-top: 20px;
     margin-left: 6em;
+    fill: rgb(244, 117, 33);
+    transition: 0.3s;
+}
+
+.logo:hover{
+   fill: #fff;
 }
 
 .navbar-items{
@@ -53,7 +61,7 @@ p {
 
 .navbar-items a{
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s;
     font-weight: bold;
     font-size: 15px;
 }
@@ -71,7 +79,7 @@ p {
 }
 
 .login-btn:hover{
-    background-color: #303238;
+    background-color: rgb(20, 21, 25);
 }
 
 .explorer-btn:hover{
@@ -85,9 +93,143 @@ p {
     background-image: url('../img/background-desktop.webp');
     background-size:cover;
     background-position:center;
-    padding: 20em 0 ;
+    padding: 18em 0 ;
     position: relative;
     z-index: -1;
-    top: -50px;
-    
+    top: -63px;   
+}
+.main-banner h1,
+.main-banner p {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: #000 3px 2px 3px;
+    margin-left: auto; /*Utilizado "centralizar" o texto*/
+    margin-right: auto;  /*Utilizado "centralizar" o texto*/
+}
+
+.main-banner h1 {
+    font-size: 60px;
+}
+
+.main-banner p {
+    max-width: 35rem; /*Utilizado para quebrar a linha */
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Service */
+
+.services-container{
+    padding: 5rem 0;
+}
+
+.services-container ul{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.services-container li{
+    flex: 1 1 200px;
+    list-style: none; /* tira a bolinha da lista */
+    text-align: center;
+    padding: 20px;
+}
+
+.services-container p{
+    line-height: 24px;
+}
+
+.title-services{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.svg-play {
+    fill: #f47521;
+}
+
+.svg-plane {
+    fill: #2abdbb;
+}
+
+.svg-crown {
+    fill: #fab818;
+}
+
+/* Plans */
+
+.title-pricing{
+    text-align: center;
+    font-size: 60px;
+    margin: 50px 0 100px 0;
+}
+
+
+.plans-container{
+    display: flex;
+    margin:  auto 10%;
+    gap: 10px;
+}
+.plan-container{
+    color: #fff;
+    padding: 32px;
+    border: 1px solid #fab818;
+}
+
+.card-head{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-head h2,
+.card-head small{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-head h2,
+.card-head h3{
+    font-size: 25px;
+}
+
+.small-text{
+    font-size: 10px;
+}
+
+.card-head h2{
+    margin-bottom: 15px;
+}
+
+.card-actions{
+    padding: 0;
+    text-align: center;
+}
+
+.btn-freetest{
+    padding: 10px;
+    border: 2px solid #fab818;
+    text-align: center;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color:#fab818;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-skiptest{
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-skiptest a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
 }
