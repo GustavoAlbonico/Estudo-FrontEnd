@@ -173,10 +173,23 @@ p {
     margin:  auto 10%;
     gap: 10px;
 }
+
 .plan-container{
+    max-width: 360px;
+    max-height: 589px;
+}
+
+.plan-fan{
     color: #fff;
     padding: 32px;
     border: 1px solid #fab818;
+}
+#pricing-plan-fan{
+    margin-top: 12%;
+}
+
+#pricing-plan-megafan-year{
+    margin-top: 15%;
 }
 
 .card-head{
@@ -206,24 +219,25 @@ p {
 .card-actions{
     padding: 0;
     text-align: center;
+    margin: 22px 0;
 }
 
 .btn-freetest{
-    padding: 10px;
-    border: 2px solid #fab818;
-    text-align: center;
-    margin-bottom: 15px;
     text-decoration: none;
-    color:#fab818;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 15px;
+    color: #fab818;
+    font-weight: bold;
 }
 
+.btn-freetest div{
+    padding: 10px 0;
+    border: 2px solid #fab818;
+}
+
+
 .btn-skiptest{
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 15px;
 }
 
 .btn-skiptest a{
@@ -231,5 +245,28 @@ p {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 11px;
+}
+
+.plan-fan p{
+    font-size: 14px;
+}
+
+.pluslist{
+    margin-top: 10px;
+}
+
+.pluslist li{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
     font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.svg-icon-list{
+    fill: #fab818;
+    width: 19px;
+    height: 19px;
 }
