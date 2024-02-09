@@ -166,6 +166,7 @@ p {
 .title-pricing{
     text-align: center;
     font-size: 55px;
+    letter-spacing: 2px;
     margin: 30px 0 60px 0;
 }
 
@@ -174,11 +175,6 @@ p {
     display: flex;
     margin:  auto 10%;
     gap: 10px;
-}
-
-.plan-container{
-    max-width: 360px;
-    max-height: 589px;
 }
 
 .plan-fan{
@@ -192,7 +188,27 @@ p {
 }
 
 #pricing-plan-megafan-year{
-    margin-top: 15%;
+    margin-top: 13%;
+}
+
+.img-best-plan-fan{
+    position: relative;
+}
+
+.img-best-plan-fan img{
+    user-select: none;
+    position: absolute;
+}
+
+.img-linesfocus-best-plan{
+    height: 300px;
+    top: -220px;
+    left: -55px;
+}
+
+.img-crown-best-plan{
+    top: -225px;
+    left: -55px;
 }
 
 .card-head{
@@ -252,6 +268,11 @@ p {
 .btn-freetest div{
     padding: 10px 0;
     border: 2px solid #fab818;
+}
+
+.btn-freetest-best-plan{
+    background-color: #fab818;
+    color: #000;
 }
 
 
