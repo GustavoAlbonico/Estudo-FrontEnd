@@ -1,9 +1,11 @@
 /* Geral */
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Helvetica, sans-serif;
+    font-family: "Lato", sans-serif;
     box-sizing: border-box;
     /* para os inputs respeitar o tamanho maximo das divs pais */
 }
@@ -163,8 +165,8 @@ p {
 
 .title-pricing{
     text-align: center;
-    font-size: 60px;
-    margin: 50px 0 100px 0;
+    font-size: 55px;
+    margin: 30px 0 60px 0;
 }
 
 
@@ -183,6 +185,7 @@ p {
     color: #fff;
     padding: 32px;
     border: 1px solid #fab818;
+    background-color: #141519;
 }
 #pricing-plan-fan{
     margin-top: 12%;
@@ -210,11 +213,27 @@ p {
 
 .small-text{
     font-size: 10px;
+    color: #A0A0A0;
 }
 
-.card-head h2{
+#best-plan-fan{
+    color: #fab818;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.card-head h2 {
     margin-bottom: 15px;
 }
+
+.card-head h3{
+    margin-bottom: 5px;
+}
+
 
 .card-actions{
     padding: 0;
@@ -245,28 +264,68 @@ p {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .plan-fan p{
     font-size: 14px;
+    color: #fff;
 }
 
 .pluslist{
     margin-top: 10px;
 }
 
+.border-line-plus{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.border-line-plus::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    background-color: #a0a0a0;
+    opacity: 0.4;
+}
+
+.border-line-plus small{
+    background-color: #141519;
+    color: #dadada;
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.pluslist ul{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #dadada;
+}
+
 .pluslist li{
-    list-style: none;
     display: flex;
     gap: 10px;
-    align-items: center;
-    font-size: 13px;
-    margin-bottom: 5px;
+    list-style: none;
+    font-size: 14px;
 }
 
 .svg-icon-list{
     fill: #fab818;
-    width: 19px;
-    height: 19px;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+
+ /* flex-grow: determina o quanto o elemento pode diminuir o seu tamanho conforme os outros elementos
+    flex-shrink: determina o quanto o elemento pode crescer seu tamanho conforme os outros elemento
+    flex-basis: determina o tamanho(largura) do elemento, auto = original */
 }
