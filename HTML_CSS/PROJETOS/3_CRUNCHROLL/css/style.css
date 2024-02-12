@@ -120,9 +120,8 @@ p {
 }
 
 /* Service */
-
 .services-container{
-    padding: 5rem 0;
+    margin-bottom: 100px;
 }
 
 .services-container ul{
@@ -260,7 +259,7 @@ p {
 .btn-freetest{
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 14px;
     color: #fab818;
     font-weight: bold;
 }
