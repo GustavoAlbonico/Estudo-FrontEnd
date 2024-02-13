@@ -160,13 +160,89 @@ p {
     fill: #fab818;
 }
 
-/* Plans */
+/* Prices and plans */
+/* .pricing-container {
+    color: #fff;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.pricing-container h2 {
+    font-size: 36px;
+}
+
+.pricing-container p {
+    font-size: 20px;
+}
+
+.plans-container{
+    display: flex;
+    justify-content: space-between; 
+        //cria espaçamento entre os itens na largura disponivel 
+    width: 90%;
+    margin: 50px auto 0;
+}
+
+.plan{
+    flex: 1;
+    max-width: 275px;
+    margin: 0 20px;
+}
+
+.plan ul {
+    padding: 0;
+}
+
+.plan li{
+    list-style: none;
+    height: 50px;
+    line-height: 50px;
+    // height e line-height técina de centralização na vertical
+    background-color: #141519;
+}
+
+.plan .price {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #2cc762;
+    text-align: center;
+    line-height: 120px;
+    margin: 0 auto -50px;
+    font-size: 18px;
+    position: relative;
+     //nesse caso relative faz a bolinha parecer na frente da lista 
+}
+
+.plan .plan-name{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #14151993;
+    padding: 50px 0;
+}
+
+.plan .plan-btn{
+    background-color: #2cc762;
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    cursor: pointer;
+}
+
+.plan .recommended {
+    background-color: #f45c57;
+} 
+*/
+
+
+/* Plans meu*/
 
 .title-pricing{
     text-align: center;
     font-size: 55px;
     letter-spacing: 2px;
-    margin: 30px 0 60px 0;
+    margin: 50px 0 70px 0;
 }
 
 
@@ -345,7 +421,117 @@ p {
     height: 16px;
     flex: 0 0 auto;
 
- /* flex-grow: determina o quanto o elemento pode diminuir o seu tamanho conforme os outros elementos
+    /* flex-grow: determina o quanto o elemento pode diminuir o seu tamanho conforme os outros elementos
     flex-shrink: determina o quanto o elemento pode crescer seu tamanho conforme os outros elemento
-    flex-basis: determina o tamanho(largura) do elemento, auto = original */
+    flex-basis: determina o tamanho(largura) do elemento, auto = original  */
+} 
+
+
+/* Search anime */
+
+.searchanime-container{
+    display: flex;
+    justify-content: space-between;
+    background-image: url("/PROJETOS/3_CRUNCHROLL/img/background-2.webp");
+    background-size: center;
+    background-position: center;
+    padding: 10rem 2rem 2rem 2rem;
+    margin: 5rem 0;
+}
+
+.searchanime-container div {
+    flex: 2 0 auto;
+
+}
+.searchanime-form{
+    text-align: center;
+}
+.searchanime-form h2{
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.searchanime-form p{
+    font-size: 24px;  
+    margin-bottom: 25px;
+}
+
+.searchanime-form input {
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    /* centraliza o input */
+}
+
+.searchanime-form input[type="text"] {
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.searchanime-form input[type="submit"]{
+    background-color: #2cc76a;
+    padding: 15px 30px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.searchanime-form input[type="submit"]:hover{
+    opacity: 1;
+}
+
+/* contact form */
+
+.contact-container {
+    text-align: center;
+    padding: 5rem 0 2rem 0;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-container p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 0 10px 20px;
+}
+
+.contact-container textarea {
+    display: block;
+    margin: 0 auto 20px;
+    width: 470px;
+    height: 150px;
+}
+
+.contact-container input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    background-color: #2cc76a;
+    color: #fff;
+    cursor: pointer;
+    border: #2cc76a;
+}
+
+/* footer */
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    margin: 50px 0 100px;
 }
