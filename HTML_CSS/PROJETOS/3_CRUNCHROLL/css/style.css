@@ -98,7 +98,7 @@ p {
     padding: 18em 0 ;
     position: relative;
     z-index: -1;
-    top: -63px;   
+    top: -63px;
 }
 .main-banner h1,
 .main-banner p {
@@ -159,6 +159,7 @@ p {
 .svg-crown {
     fill: #fab818;
 }
+
 
 /* Prices and plans */
 /* .pricing-container {
@@ -237,6 +238,9 @@ p {
 
 
 /* Plans meu*/
+.pricing-container{
+    position: relative;
+}
 
 .title-pricing{
     text-align: center;
@@ -430,12 +434,13 @@ p {
 /* Search anime */
 
 .searchanime-container{
+    position: relative;
     display: flex ;
     background-image: url("../img/background-2.webp");
-    background-size: center;
+    background-size: cover;
     background-position: center;
     padding: 5rem 2rem 0rem 2rem;
-    margin: 5rem 0;
+    margin-bottom: 5rem;
 }
 
 .image-hero {
@@ -495,18 +500,31 @@ p {
 /* contact form */
 
 .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-image: url("../img/hime-feedback-2.png");
+    background-size:cover;
+    background-position: center;
     text-align: center;
-    padding: 5rem 0 2rem 0;
+    padding: 8rem 0 10rem 5rem;
+    margin-top: 5rem;
 }
 
 .contact-container h2 {
     font-size: 36px;
     margin-bottom: 15px;
+    margin-left: 10%;
 }
 
 .contact-container p {
+    color: #fff;
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom:10px;
+}
+
+.contact-container form{
+    margin-left: 2rem;
 }
 
 .contact-container input,
@@ -516,19 +534,17 @@ p {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin: 0 10px 20px;
+    margin: 20px 10px;
 }
 
 .contact-container textarea {
     display: block;
-    margin: 0 auto 20px;
     width: 470px;
     height: 150px;
+    margin: 0 auto;
 }
 
 .contact-container input[type="submit"] {
-    display: block;
-    margin: 0 auto;
     background-color: #2cc76a;
     color: #fff;
     cursor: pointer;
@@ -538,9 +554,81 @@ p {
 /* footer */
 
 footer{
+    position: relative;
     text-align: center;
     font-weight: bold;
     margin: 50px 0 100px;
 }
 
-/* ver grid area */
+/* shadow */
+
+.shadow-searchanime-container,
+.shadow-pricing-container,
+.shadow-footer{
+    position: absolute;
+    width: 102.4%;
+    left: -2rem;
+}
+
+.shadow-searchanime-container{
+    height: 10rem;
+    bottom: 0px;
+    background-image: linear-gradient(180deg,#0000,#000);
+}
+
+.shadow-pricing-container{
+    height: 10rem;
+    bottom: -12rem;
+    background-image: linear-gradient(180deg,#000,#0000);
+}
+
+.shadow-footer{
+    height: 8rem;
+    top: -8rem;
+    background-image: linear-gradient(180deg,#0000,#000);
+}
+
+/* responsividade */
+
+/* small laptops a partir de 1100px */
+@media (max-width: 1100px){
+
+    .searchanime-form p{
+        color: #fff;
+    }
+    .image-hero {
+        height: 50%;
+        margin-bottom: 0;
+        margin-top: 7rem;
+    }
+    .plans-container{
+        margin: auto 3%;
+    }
+
+    .title-services{
+        text-align: center;
+        margin-right: 20px;
+    }
+
+    .shadow-searchanime-container,
+    .shadow-pricing-container,
+    .shadow-footer{
+        width: 103%;
+    }
+}
+
+/* tablet 900px*/
+
+@media (max-width: 900px){
+    .main-banner h1{
+        font-size: 50px;
+    }
+    .main-banner p{
+        font-size: 15px;
+    }
+
+    .title-services{
+        text-align: center;
+    }
+
+}
