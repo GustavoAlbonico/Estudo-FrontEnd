@@ -430,22 +430,29 @@ p {
 /* Search anime */
 
 .searchanime-container{
-    display: flex;
-    justify-content: space-between;
-    background-image: url("/PROJETOS/3_CRUNCHROLL/img/background-2.webp");
+    display: flex ;
+    background-image: url("../img/background-2.webp");
     background-size: center;
     background-position: center;
-    padding: 10rem 2rem 2rem 2rem;
+    padding: 5rem 2rem 0rem 2rem;
     margin: 5rem 0;
 }
 
-.searchanime-container div {
-    flex: 2 0 auto;
-
+.image-hero {
+    width: 50%;
+    margin-bottom: 5rem;
 }
+
+.searchanime-container div img{
+    width: 70%;
+}
+
 .searchanime-form{
     text-align: center;
+    margin-left: 3.2rem;
+    margin-bottom: 4rem;
 }
+
 .searchanime-form h2{
     color: #fff;
     font-size: 42px;
@@ -535,3 +542,5 @@ footer{
     font-weight: bold;
     margin: 50px 0 100px;
 }
+
+/* ver grid area */
