@@ -29,15 +29,19 @@ p {
     width: 100%;
     height: 63px;
     background-color: rgba(0, 0, 0,0.7);
+    padding: 0 1rem;
 }
 
-.nav{
-    position: relative;
+.navbar-container nav{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
 }
 .logo{
     width: 132px;
-    margin-top: 20px;
-    margin-left: 6em;
+    /* margin-left: 6em; */
     fill: rgb(244, 117, 33);
     transition: 0.3s;
 }
@@ -47,18 +51,20 @@ p {
 }
 
 .navbar-items{
-    position: absolute;
-    right: 0;
-    height: 63px;
-    line-height: 63px;
-    margin: 0 5rem 0 0;
-    display: inline-block;
+    display: flex;
+
+    /* position: absolute;
+    right: 0; */
+    /* height: 63px; */
+    /* line-height: 63px; */
+    /* margin: 0 5rem 0 0; */
+    /* display: inline-block; */
 }
 
 .navbar-items li {
-    display: inline-block;
-    text-transform: uppercase;
-    margin-right: 3px;
+    /* display: inline-block; */
+    /* text-transform: uppercase; */
+    /* margin-right: 3px; */
 }
 
 .navbar-items a{
@@ -66,6 +72,7 @@ p {
     transition: 0.3s;
     font-weight: bold;
     font-size: 15px;
+    text-transform: uppercase;
 }
 
 .login-btn{
@@ -77,7 +84,7 @@ p {
 .explorer-btn{
     color: #ddd;
     border: 2px solid #ddd;
-    padding: 11px 17px;
+    padding: 12px 17px;
 }
 
 .login-btn:hover{
@@ -600,11 +607,6 @@ footer{
 
 /* small laptops a partir de 1100px */
 @media (max-width: 1100px){
-
-    .searchanime-form p{
-        color: #fff;
-        text-shadow: #00000088 1px 2px 3px;
-    }
     .image-hero {
         height: 50%;
         margin-bottom: 0;
@@ -648,8 +650,6 @@ footer{
     }
     
     .searchanime-form p{
-        color: #fff;
-        text-shadow: #00000088 1px 2px 3px;
         font-size: 18px;  
         margin-bottom: 25px;
     }
@@ -720,4 +720,9 @@ footer{
     .shadow-footer{
         width: 105%;
     }
+}
+
+/* celular 576px*/
+@media (max-width: 576px) {
+
 }
