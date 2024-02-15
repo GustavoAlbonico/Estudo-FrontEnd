@@ -27,21 +27,21 @@ p {
 
 .navbar-container{
     width: 100%;
-    height: 63px;
+    height: 58px;
     background-color: rgba(0, 0, 0,0.7);
     padding: 0 1rem;
 }
 
 .navbar-container nav{
+    margin: 0 5rem;
+    padding: 0 2rem;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: relative; */
 }
 .logo{
-    width: 132px;
-    /* margin-left: 6em; */
+    width: 125px;
     fill: rgb(244, 117, 33);
     transition: 0.3s;
 }
@@ -52,39 +52,40 @@ p {
 
 .navbar-items{
     display: flex;
-
-    /* position: absolute;
-    right: 0; */
-    /* height: 63px; */
-    /* line-height: 63px; */
-    /* margin: 0 5rem 0 0; */
-    /* display: inline-block; */
-}
-
-.navbar-items li {
-    /* display: inline-block; */
-    /* text-transform: uppercase; */
-    /* margin-right: 3px; */
+    gap: 10px;
 }
 
 .navbar-items a{
     text-decoration: none;
     transition: 0.3s;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: uppercase;
+}
+
+.navbar-items a div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn,
+.explorer-btn{
+    width: 120px;
+    height: 40px;
+    padding: 0 16px;
 }
 
 .login-btn{
     color: #fff;
     background-color: #000;
-    padding: 12px 36px;
+    border: 2px solid transparent;
+    
 }
 
 .explorer-btn{
     color: #ddd;
     border: 2px solid #ddd;
-    padding: 12px 17px;
 }
 
 .login-btn:hover{
@@ -102,10 +103,10 @@ p {
     background-image: url('../img/background-desktop.webp');
     background-size:cover;
     background-position:center;
-    padding: 18em 0 ;
+    padding: 15.7em 0 ;
     position: relative;
     z-index: -1;
-    top: -63px;
+    top: -58px;
 }
 .main-banner h1,
 .main-banner p {
@@ -604,6 +605,22 @@ footer{
 }
 
 /* responsividade */
+
+@media (max-width: 2560px){
+
+    main {
+        overflow-x: hidden;
+    }
+    .navbar-container{
+        /* margin: 0 20rem; */
+        /* definir o tamanho maximo do container */
+    }
+
+    main {
+        margin: 0 22%;
+    }
+}
+
 
 /* small laptops a partir de 1100px */
 @media (max-width: 1100px){
