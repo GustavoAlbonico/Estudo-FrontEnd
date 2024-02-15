@@ -448,6 +448,12 @@ p {
     margin-bottom: 5rem;
 }
 
+.searchanime-container div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .searchanime-container div img{
     width: 70%;
 }
@@ -465,8 +471,10 @@ p {
 }
 
 .searchanime-form p{
+    color: #fff;
     font-size: 24px;  
     margin-bottom: 25px;
+    text-shadow: #00000088 1px 2px 3px;
 }
 
 .searchanime-form input {
@@ -595,6 +603,7 @@ footer{
 
     .searchanime-form p{
         color: #fff;
+        text-shadow: #00000088 1px 2px 3px;
     }
     .image-hero {
         height: 50%;
@@ -624,11 +633,91 @@ footer{
         font-size: 50px;
     }
     .main-banner p{
-        font-size: 15px;
+        font-size: 18px;
+        padding: 0 2rem;
     }
 
     .title-services{
         text-align: center;
     }
 
+    .searchanime-form h2{
+        color: #fff;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    
+    .searchanime-form p{
+        color: #fff;
+        text-shadow: #00000088 1px 2px 3px;
+        font-size: 18px;  
+        margin-bottom: 25px;
+    }
+
+    .searchanime-form input[type="text"] {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+
+    .searchanime-form input[type="submit"]{
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .image-hero {
+        height: 60%;
+        margin-bottom: 0;
+        margin-top: 7.5rem;
+    }
+
+    .plans-container{
+        display: grid;
+        grid-template-areas:
+        ". a a ."
+        "b b c c";
+    }
+    
+    #plan-container-best{
+        grid-area: a;
+    }
+
+    #plan-container-fan{
+        grid-area: b;
+    }
+
+    #plan-container-megafan-year{
+        grid-area: c;
+    }
+
+    #pricing-plan-fan,
+    #pricing-plan-megafan-year{
+        margin-top: 1%;
+    }
+
+    .contact-container{
+        padding: 5rem 0 5rem 2rem;
+    }
+
+    .contact-container h2 {
+        font-size: 33px;
+    }
+
+    .contact-container p {
+        font-size: 16px;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+        font-size: 14px;
+    }
+
+    .contact-container form{
+        margin-left: 0;
+    }
+
+    .shadow-searchanime-container,
+    .shadow-pricing-container,
+    .shadow-footer{
+        width: 105%;
+    }
 }
