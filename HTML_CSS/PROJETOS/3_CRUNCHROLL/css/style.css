@@ -858,7 +858,7 @@ footer{
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
     
     .main-banner h1{
         font-size: 40px;
@@ -914,14 +914,6 @@ footer{
         font-size: 21px;
     }
 
-    .img-linesfocus-best-plan{
-        top: -200px;
-    }
-    
-    .img-crown-best-plan{
-        top: -205px;
-    }
-
     .btn-freetest{
         font-size: 14px;    
     }
@@ -945,6 +937,94 @@ footer{
     .shadow-pricing-container,
     .shadow-footer{
         height: 5rem;
+    }
+
+    .shadow-pricing-container{
+        bottom: -9rem;
+    }
+}
+
+@media (max-width: 280px) {
+
+    .navbar-container{
+        padding: 0 10px;
+    }
+    
+    .main-banner h1{
+        font-size: 40px;
+    }
+
+    .main-banner p{
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .services-container ul li p{
+        line-height: 24px;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .title-services h3{
+        font-size: 20px;
+    }
+
+    .searchanime-container{
+        padding: 0px 10px;
+    }
+    
+    .title-pricing{
+        font-size: 40px;
+    }
+
+    .plans-container{
+        padding: 0 5px;
+    }
+
+    .card-head h2,
+    .card-head h3{
+        font-size: 26px;
+    }
+
+    .small-text{
+        font-size: 11px;
+    }
+
+    #best-plan-fan{
+        font-size: 21px;
+    }
+
+    .img-linesfocus-best-plan{
+        top: -170px;
+    }
+    
+    .img-crown-best-plan{
+        top: -175px;
+    }
+
+    .btn-freetest{
+        font-size: 12px;    
+    }
+
+    .btn-skiptest a{
+        font-size: 10px;
+    }
+
+    .border-line-plus small{
+        font-size: 10px;
+    }
+
+    .plan-fan p{
+        font-size: 13px;
+    }
+    .pluslist li{
+        font-size: 13px;
+    }
+
+    .shadow-searchanime-container,
+    .shadow-pricing-container,
+    .shadow-footer{
+        height: 4rem;
     }
 
     .shadow-pricing-container{
