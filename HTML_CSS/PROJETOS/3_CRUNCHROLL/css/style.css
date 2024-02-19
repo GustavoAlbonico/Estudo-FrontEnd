@@ -33,7 +33,6 @@ p {
 }
 
 .navbar-container nav{
-    /* margin: 0 5rem; */
     padding: 0 2rem;
     height: 100%;
     display: flex;
@@ -282,9 +281,12 @@ p {
     position: relative;
 }
 
+
 .img-best-plan-fan img{
     user-select: none;
     position: absolute;
+    max-width: 150%;
+
 }
 
 .img-linesfocus-best-plan{
@@ -447,13 +449,13 @@ p {
     background-image: url("../img/background-2.webp");
     background-size: cover;
     background-position: center;
-    padding: 5rem 2rem 0rem 2rem;
+    padding: 5rem 2rem 0rem 0rem;
     margin-bottom: 5rem;
 }
 
 .image-hero {
     width: 50%;
-    margin-bottom: 5rem;
+    margin: 0 0 5rem 2rem;
 }
 
 .searchanime-container div{
@@ -544,7 +546,7 @@ p {
 
 .contact-container input,
 .contact-container textarea {
-    width: 200px;
+    width: max-content;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
@@ -581,8 +583,7 @@ footer{
 .shadow-pricing-container,
 .shadow-footer{
     position: absolute;
-    width: 102.4%;
-    left: -2rem;
+    width: 100%;
 }
 
 .shadow-searchanime-container{
@@ -617,7 +618,6 @@ footer{
 /* small laptops a partir de 1100px */
 @media (max-width: 1100px){
     .image-hero {
-        height: 50%;
         margin-bottom: 0;
         margin-top: 7rem;
     }
@@ -628,12 +628,6 @@ footer{
     .title-services{
         text-align: center;
         margin-right: 20px;
-    }
-
-    .shadow-searchanime-container,
-    .shadow-pricing-container,
-    .shadow-footer{
-        width: 103%;
     }
 }
 
@@ -646,10 +640,6 @@ footer{
     .main-banner p{
         font-size: 18px;
         padding: 0 2rem;
-    }
-
-    .title-services{
-        text-align: center;
     }
 
     .searchanime-form h2{
@@ -677,7 +667,7 @@ footer{
     .image-hero {
         height: 60%;
         margin-bottom: 0;
-        margin-top: 7.5rem;
+        margin-top: auto;
     }
 
     .plans-container{
@@ -725,17 +715,17 @@ footer{
         margin-left: 0;
     }
 
-    .shadow-searchanime-container,
-    .shadow-pricing-container,
-    .shadow-footer{
-        width: 105%;
-    }
 }
 
 /* celular 576px*/
 @media (max-width: 576px) {
-    html{
-      min-width: 590px;
+
+    .navbar-container nav{
+        padding: 0;
+    }
+
+    .login-btn-display-none{
+        display: none;
     }
 
     .main-banner h1{
@@ -759,6 +749,7 @@ footer{
 
     .searchanime-container{
         justify-content: center;
+        padding-left: 2rem;
     }
 
     .searchanime-container div{
@@ -789,6 +780,7 @@ footer{
     }
 
     .plans-container{
+        padding: 0 30px;
         grid-template-areas:
         "a"
         "b"
@@ -808,17 +800,13 @@ footer{
         grid-area: c;
     }
 
-    .plans-container{
-        padding: 0 50px;
-    }
-
     .card-head h2,
     .card-head h3{
         font-size: 30px;
     }
 
     .small-text{
-        font-size: 15px;
+        font-size: 12px;
     }
 
     #best-plan-fan{
@@ -826,21 +814,140 @@ footer{
     }
 
     .btn-freetest{
-        font-size: 19px;    
+        font-size: 15px;    
     }
 
     .btn-skiptest a{
-        font-size: 17px;
+        font-size: 14px;
     }
 
     .border-line-plus small{
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .plan-fan p{
-        font-size: 18px;
+        font-size: 15px;
     }
     .pluslist li{
-        font-size: 18px;
+        font-size: 15px;
+    }
+
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+
+    .contact-container textarea {
+        width: 90%;
+    }
+
+    .contact-container input{
+        width: 80%;
+    }
+
+    .contact-container input[type="text"]{
+        margin: 10px 10px 20px;
+    }
+
+    .contact-container input[type="email"] {
+        margin: 0 10px 20px;
+    }
+
+    .contact-container input[type="submit"]{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 320px) {
+    
+    .main-banner h1{
+        font-size: 40px;
+    }
+
+    .main-banner p{
+        font-size: 16px;
+    }
+
+    .services-container ul li p{
+        line-height: 24px;
+        padding: 0;
+        font-size: 15px;
+    }
+
+    .title-services h3{
+        font-size: 25px;
+    }
+
+    .searchanime-container{
+        padding: 0px 20px;
+    }
+    
+    .searchanime-form input[type="text"] {
+        width: 90%;
+        padding: 15px;
+        font-size: 15px;
+    }
+    
+    .searchanime-form input[type="submit"]{
+        padding: 12px 28px;
+        font-size: 20px;
+    }
+
+    .title-pricing{
+        font-size: 45px;
+    }
+
+    .plans-container{
+        padding: 0 10px;
+    }
+
+    .card-head h2,
+    .card-head h3{
+        font-size: 28px;
+    }
+
+    .small-text{
+        font-size: 12px;
+    }
+
+    #best-plan-fan{
+        font-size: 21px;
+    }
+
+    .img-linesfocus-best-plan{
+        top: -200px;
+    }
+    
+    .img-crown-best-plan{
+        top: -205px;
+    }
+
+    .btn-freetest{
+        font-size: 14px;    
+    }
+
+    .btn-skiptest a{
+        font-size: 12px;
+    }
+
+    .border-line-plus small{
+        font-size: 12px;
+    }
+
+    .plan-fan p{
+        font-size: 14px;
+    }
+    .pluslist li{
+        font-size: 14px;
+    }
+
+    .shadow-searchanime-container,
+    .shadow-pricing-container,
+    .shadow-footer{
+        height: 5rem;
+    }
+
+    .shadow-pricing-container{
+        bottom: -9rem;
     }
 }
