@@ -42,7 +42,7 @@ html{
     margin: 1rem 3rem;
 }
 
-.list-container ul{
+.list-container .list{
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2,1fr);
@@ -102,6 +102,23 @@ html{
     color: #000;
 }
 
+.img-html-css-js {
+    width: 110px;
+}
+.img-html-css {
+    width: 100px;
+}
+
+.list-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.list-info li {
+    list-style: none;
+}
+
 @media (max-width: 576px) {
 
     .header h1{
@@ -112,7 +129,7 @@ html{
         font-size: 18px;
     }
 
-    .list-container ul{
+    .list-container .list{
         grid-template-columns: repeat(1,1fr);
     }   
 
