@@ -131,3 +131,91 @@
 
 // greeting();
 // greeting("Jose");
+
+// 8 - valor default
+
+const customGreeting = (name,greet = "Olá") => {
+    return `${greet}, ${name}!`;
+}
+
+console.log(customGreeting ("Matheus"));
+
+console.log(customGreeting("João", "Bom dia"));
+
+const repeatText = (text, repeat = 2) => {
+    for (let i = 0; i < repeat; i++){
+        console.log(text);
+    }
+};
+
+repeatText("Testando");
+
+repeatText("Agora repete 5 vezes", 5);
+
+// 9 - closure
+
+function someFunction() {
+    let txt = "Alguma coisa";
+
+    function display() {
+        console.log(txt);
+    }
+
+    display();
+}
+
+someFunction();
+
+// 10 - mais sobre closure
+const multiplicationClosure = (n) => {
+    return (m) => {
+        return n * m;
+    }
+}
+
+const c1 = multiplicationClosure(5);
+
+const c2 = multiplicationClosure(10);
+
+console.log(c1);
+
+//no primeiro chamado chama o valor
+//de n no segundo chamado chama o valor de m
+
+console.log(c2);
+
+console.log(c1(8));
+
+console.log(c2(10));
+
+// 11 - recursion
+const untilTen = (n,m) => {
+    if(n < 10){
+        console.log("A função parou de executar!");
+    } else {
+        const x = n - m
+
+        console.log(x);
+
+        untilTen(x, m);
+    }
+};
+
+untilTen(100,7);
+
+function factorial(x) {
+    if(x === 0) {
+        return 1;
+    } else {
+        console.log(x * factorial(x - 1))
+        return x * factorial(x - 1);
+    }
+}
+
+//É como se fizese 6 x 5 x 4 x 3 x 2 x 1 = 720;
+
+const num = 6;
+
+const result = factorial(num);
+
+console.log(`O fatorial do número ${num} é ${result}`)
