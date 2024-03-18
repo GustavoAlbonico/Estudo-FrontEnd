@@ -1,309 +1,309 @@
-// // 1 - arrays
-// const lista = [1, 2, 3, 4, 5];
+// 1 - arrays
+const lista = [1, 2, 3, 4, 5];
 
-// console.log(lista);
+console.log(lista);
 
-// const itens = ['Matheus',true,2,4.12,[]]
+const itens = ['Matheus',true,2,4.12,[]]
 
-// console.log(itens);
+console.log(itens);
 
-// // 2 - mais sobre arrays
-// const arr = ["a", "b", "c", "d", "d"];
+// 2 - mais sobre arrays
+const arr = ["a", "b", "c", "d", "d"];
 
-// console.log(arr[0]);
-// console.log(arr[2]);
-// console.log(arr[83]);
+console.log(arr[0]);
+console.log(arr[2]);
+console.log(arr[83]);
 
-// // 3 -propriedades
+// 3 -propriedades
 
-// const numbers = [5, 3, 4]
+const numbers = [5, 3, 4]
 
-// console.log(numbers.length);
+console.log(numbers.length);
 
-// console.log(numbers["length"]);
+console.log(numbers["length"]);
 
-// const myName = "Matheus"
+const myName = "Matheus"
 
-// console.log(myName.length);
+console.log(myName.length);
 
-// // 4 - metodos
-// const otherNumbers = [1,2,3];
+// 4 - metodos
+const otherNumbers = [1,2,3];
 
-// const allNumbers = numbers.concat(otherNumbers);
-// //concatena uma lista na outra lista
+const allNumbers = numbers.concat(otherNumbers);
+//concatena uma lista na outra lista
 
-// console.log(allNumbers);
+console.log(allNumbers);
 
-// const text = "algum texto";
+const text = "algum texto";
 
-// console.log(text.toUpperCase());
+console.log(text.toUpperCase());
 
-// console.log(typeof text.toUpperCase);
+console.log(typeof text.toUpperCase);
 
-// console.log(text.indexOf("g"));
-// //mostra o index do "g"
+console.log(text.indexOf("g"));
+//mostra o index do "g"
 
-// // 5 - Objetos
+// 5 - Objetos
 
-// const person = {
-//     name: "Matheus",
-//     age: 31,
-//     job: "Programador",
-// };
+const person = {
+    name: "Matheus",
+    age: 31,
+    job: "Programador",
+};
 
-// console.log(person);
-// console.log(person.name);
-// console.log(person.name.length);
-// console.log(typeof person);
+console.log(person);
+console.log(person.name);
+console.log(person.name.length);
+console.log(typeof person);
 
-// // 6 - criando e deletando propriedades
-// const car = {
-//     engine: 2.0,
-//     brand: "VW",
-//     model: "Tiguan",
-//     km: 20000,
-// };
+// 6 - criando e deletando propriedades
+const car = {
+    engine: 2.0,
+    brand: "VW",
+    model: "Tiguan",
+    km: 20000,
+};
 
-// console.log(car);
+console.log(car);
 
-// car.doors = 4;
+car.doors = 4;
 
-// console.log(car);
+console.log(car);
 
-// delete car.km;
+delete car.km;
 
-// console.log(car);
+console.log(car);
 
-// // 7 - mais sobre objetos
-// const obj = {
-//     a: "teste",
-//     b: true,
-// };
+// 7 - mais sobre objetos
+const obj = {
+    a: "teste",
+    b: true,
+};
 
-// console.log(obj instanceof Object);
+console.log(obj instanceof Object);
 
-// const obj2 = {
-//     c: []
-// };
+const obj2 = {
+    c: []
+};
 
-// Object.assign(obj2,obj);
+Object.assign(obj2,obj);
 
-// console.log(obj);
+console.log(obj);
 
-// // 8 - conhecendo melhor objetos
-// console.log(Object.keys(obj));
-// console.log(Object.keys(obj2));
-// console.log(Object.keys(car));
+// 8 - conhecendo melhor objetos
+console.log(Object.keys(obj));
+console.log(Object.keys(obj2));
+console.log(Object.keys(car));
 
-// console.log(Object.entries(car));
+console.log(Object.entries(car));
 
-// // 9 -Mutação
-// const a = {
-//     name: "Matheus",
-// };
+// 9 -Mutação
+const a = {
+    name: "Matheus",
+};
 
-// const b = a;
+const b = a;
 
-// console.log(a);
-// console.log(b);
+console.log(a);
+console.log(b);
 
-// console.log(a === b);
+console.log(a === b);
 
-// a.age = 31;
+a.age = 31;
 
-// console.log(a);
-// console.log(b);
+console.log(a);
+console.log(b);
 
-// delete b.age;
+delete b.age;
 
-// console.log(a);
-// console.log(b);
+console.log(a);
+console.log(b);
 
-// // 10 - Loops em arrays
-// const users = ["Matheus","João","Pedro","Miguel"];
+// 10 - Loops em arrays
+const users = ["Matheus","João","Pedro","Miguel"];
 
-// for(let i = 0; i < users.length; i++){
-//     console.log(`Listando o usuário: ${users[i]}`);
-// }
+for(let i = 0; i < users.length; i++){
+    console.log(`Listando o usuário: ${users[i]}`);
+}
 
-// // 11 - push e pop
-// const array = ["a","b","c"];
+// 11 - push e pop
+const array = ["a","b","c"];
 
-// array.push("d");
+array.push("d");
 
-// console.log(array);
+console.log(array);
 
-// console.log(array.length);
+console.log(array.length);
 
-// array.pop();
+array.pop();
 
-// console.log(array);
+console.log(array);
 
-// const itemRemovido = array.pop();
+const itemRemovido = array.pop();
 
-// console.log(itemRemovido);
+console.log(itemRemovido);
 
-// console.log(array);
+console.log(array);
 
-// array.push("z","x","y");
+array.push("z","x","y");
 
-// console.log(array);
+console.log(array);
 
-// // 12 - shift e unshift
+// 12 - shift e unshift
 
-// const letters = ["a","b","c"];
+const letters = ["a","b","c"];
 
-// const letter = letters.shift();
+const letter = letters.shift();
 
-// console.log(letter);
+console.log(letter);
 
-// console.log(letters);
+console.log(letters);
 
-// letters.unshift("p","q","r");
+letters.unshift("p","q","r");
 
-// letters.unshift("z");
+letters.unshift("z");
 
-// console.log(letters);
+console.log(letters);
 
-// // 13 - indexOf e lastIndexOf
-// const myElements = ["Morango","Maçã","Abacate","Pêra","Abacate"];
+// 13 - indexOf e lastIndexOf
+const myElements = ["Morango","Maçã","Abacate","Pêra","Abacate"];
 
-// console.log(myElements.indexOf("Maçã"));
-// console.log(myElements.indexOf("Abacate"));
+console.log(myElements.indexOf("Maçã"));
+console.log(myElements.indexOf("Abacate"));
 
-// console.log(myElements[2]);
-// console.log(myElements[myElements.indexOf("Abacate")]);
+console.log(myElements[2]);
+console.log(myElements[myElements.indexOf("Abacate")]);
 
-// console.log(myElements.lastIndexOf("Abacate"));
+console.log(myElements.lastIndexOf("Abacate"));
 
-// console.log(myElements.indexOf("Mamão"));
+console.log(myElements.indexOf("Mamão"));
 
-// console.log(myElements.lastIndexOf("Mamão"));
+console.log(myElements.lastIndexOf("Mamão"));
 
-// // 14 -  slice
-// const testeSlice = ["a","b","c","d","e","f"];
+// 14 -  slice
+const testeSlice = ["a","b","c","d","e","f"];
 
-// const subArray =  testeSlice.slice(2,4);
-// //ele pega do index 2 até o index 3 na verdade
+const subArray =  testeSlice.slice(2,4);
+//ele pega do index 2 até o index 3 na verdade
 
-// console.log(subArray);
+console.log(subArray);
 
-// console.log(testeSlice);
+console.log(testeSlice);
 
-// const subArray2 = testeSlice.slice(2, 4 + 1);
+const subArray2 = testeSlice.slice(2, 4 + 1);
 
-// console.log(subArray2);
+console.log(subArray2);
 
-// const subArray3 =  testeSlice.slice(10,20);
+const subArray3 =  testeSlice.slice(10,20);
 
-// console.log(subArray3);
+console.log(subArray3);
 
-// const subArray4 = testeSlice.slice(2);
+const subArray4 = testeSlice.slice(2);
 
-// console.log(subArray4);
+console.log(subArray4);
 
-// const arrayTeste = ["00:00","00:30","01:00","01:30","02:00"];
+const arrayTeste = ["00:00","00:30","01:00","01:30","02:00"];
 
-// console.log(arrayTeste.slice(2));
+console.log(arrayTeste.slice(2));
 
-// // 15 - foreach
-// const nums = [1, 2, 3, 4, 5];
+// 15 - foreach
+const nums = [1, 2, 3, 4, 5];
 
-// nums.forEach((numero) => {
-//     console.log(`O número é ${numero}`);
-// });
+nums.forEach((numero) => {
+    console.log(`O número é ${numero}`);
+});
 
-// const post = [
-//     { title: "Primeiro post", category: "PHP"},
-//     { title: "Segundo post", category: "JavaScript"},
-//     { title: "Terceito post", category: "Python"},
-// ];
+const post = [
+    { title: "Primeiro post", category: "PHP"},
+    { title: "Segundo post", category: "JavaScript"},
+    { title: "Terceito post", category: "Python"},
+];
 
-// post.forEach((post) => {
-//     console.log(`Exibindo post: ${post.title}, da categoria: ${post.category}`);
-// });
+post.forEach((post) => {
+    console.log(`Exibindo post: ${post.title}, da categoria: ${post.category}`);
+});
 
-// // 16 - includes
-// const brands = ["BMW", "VW", "Fiat"];
+// 16 - includes
+const brands = ["BMW", "VW", "Fiat"];
 
-// console.log(brands.includes("Fiat"));
+console.log(brands.includes("Fiat"));
 
-// console.log(brands.includes("KIA"));
+console.log(brands.includes("KIA"));
 
-// if (brands.includes("BMW")) {
-//     console.log("Há carros da marca BMW!");
-// }
+if (brands.includes("BMW")) {
+    console.log("Há carros da marca BMW!");
+}
 
-// // 17 - reverse
-// const reverseTest = [1, 2, 3, 4, 5];
+// 17 - reverse
+const reverseTest = [1, 2, 3, 4, 5];
 
-// reverseTest.reverse();
+reverseTest.reverse();
 
-// console.log(reverseTest);
+console.log(reverseTest);
 
-// // 18 - trim (remove espaço e caracteres especiais tipo /n)
-// const trimTest = "   testando \n  ";
+// 18 - trim (remove espaço e caracteres especiais tipo /n)
+const trimTest = "   testando \n  ";
 
-// console.log(trimTest);
+console.log(trimTest);
 
-// console.log(trimTest.trim());
+console.log(trimTest.trim());
 
-// console.log(trimTest.length);
+console.log(trimTest.length);
 
-// console.log(trimTest.trim().length);
+console.log(trimTest.trim().length);
 
-// // 19 - padstart (adiciona texto no começo da string)
-// const testePadStart = "1";
+// 19 - padstart (adiciona texto no começo da string)
+const testePadStart = "1";
 
-// const newNumber =  testePadStart.padStart(4 , "0");
+const newNumber =  testePadStart.padStart(4 , "0");
 
-// console.log(testePadStart);
+console.log(testePadStart);
 
-// console.log(newNumber);
+console.log(newNumber);
 
-// const testePadEnd =  newNumber.padEnd(10, "0");
+const testePadEnd =  newNumber.padEnd(10, "0");
 
-// console.log(testePadEnd);
+console.log(testePadEnd);
 
-// // 20 - split
-// const frase = "O rato roeu a roupa do rei de Roma";
+// 20 - split
+const frase = "O rato roeu a roupa do rei de Roma";
 
-// const arrayDaFrase = frase.split(" ");
+const arrayDaFrase = frase.split(" ");
 
-// console.log(arrayDaFrase);
+console.log(arrayDaFrase);
 
-// // 21 - join (uni uma lista em uma string)
-// const fraseDeNovo = arrayDaFrase.join(" ");
+// 21 - join (uni uma lista em uma string)
+const fraseDeNovo = arrayDaFrase.join(" ");
 
-// console.log(fraseDeNovo);
+console.log(fraseDeNovo);
 
-// const itensParaComprar = ["Mouse", "Teclado", "Monitor",];
+const itensParaComprar = ["Mouse", "Teclado", "Monitor",];
 
-// const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}.`;
+const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}.`;
 
-// console.log(fraseDeCompra);
+console.log(fraseDeCompra);
 
-// // 22 - repeat
-// const palavra = "Testando ";
+// 22 - repeat
+const palavra = "Testando ";
 
-// console.log(palavra.repeat(5));
+console.log(palavra.repeat(5));
 
-// // 23 - rest operator
+// 23 - rest operator
 
-// const somaInfinita = (...args) => {
-//     let total = 0;
+const somaInfinita = (...args) => {
+    let total = 0;
 
-//     for(let i = 0; i < args.length; i++){
-//         total += args[i];
-//     }
-//     return total;
-// };
+    for(let i = 0; i < args.length; i++){
+        total += args[i];
+    }
+    return total;
+};
 
-// console.log(somaInfinita(1,2,4));
+console.log(somaInfinita(1,2,4));
 
-// console.log(somaInfinita(1,20,44,5000,2,1,234));
+console.log(somaInfinita(1,20,44,5000,2,1,234));
 
-// // 24 - for...of
+// 24 - for...of
 const somaInfinita2 = (...args) => {
     let total = 0;
 
