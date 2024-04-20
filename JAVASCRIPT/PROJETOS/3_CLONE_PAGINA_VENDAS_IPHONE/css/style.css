@@ -89,7 +89,7 @@ header nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden
+    overflow: hidden;
 }
 
 #main-content #title {
@@ -126,11 +126,11 @@ header nav {
     max-width: 1000px;
     margin: 3rem auto;
     opacity: 1;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 #main-content #product-image.changing {
-    opacity: 0.5s;
+    opacity: 0.5;
 }
 
 #image-picker {
@@ -199,7 +199,7 @@ header nav {
     }
 }
 
-@media (max-width: 493px){
+@media (max-width: 510px){
     #navbar li {
         display: none;
     }
