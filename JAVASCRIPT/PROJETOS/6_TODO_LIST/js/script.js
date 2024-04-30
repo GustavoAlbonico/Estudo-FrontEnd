@@ -8,12 +8,12 @@ const searchInput = document.querySelector("#search-input");
 
 //Botoes
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
-const eraseBtn = document.querySelector("#erase-todo");
+const eraseBtn = document.querySelector("#erase-button");
 const filterBtn = document.querySelector("#filter-select");
 
 let oldInputValue;
 // Funções
-const saveTodo = (text) => {
+const saveTodo = (text, done = 0, save = 1) => {
     const todo = document.createElement("div");
     todo.classList.add("todo");
 
@@ -39,6 +39,16 @@ const saveTodo = (text) => {
     removeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
     todo.appendChild(removeBtn);
 
+    
+    //Utilizando dados da localStorage
+    if(done) {
+        todo.classList.add("done");
+    }
+
+    if(save) {
+        saveTodoLocalStorage({text, done});
+    }
+    
     todoList.appendChild(todo);
 
     todoInput.value = '';
@@ -62,6 +72,52 @@ const updateTodo = (editInputValue) => {
             todoTitle.innerText = editInputValue;
         }
     })
+}
+
+const getSearchTodos = (search) => {
+    const todos = todoList.querySelectorAll(".todo");
+
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3").innerText.toLowerCase();
+
+        const normalizedSearch =  search.toLowerCase();
+
+        todo.style.display = "flex";
+
+        if(!todoTitle.includes(search)) {
+            todo.style.display = "none";
+        }
+    });
+}
+
+const filterTodos = (filterValue) => {
+
+    const todos = document.querySelectorAll(".todo");
+
+    switch(filterValue) {
+        case "all":
+            todos.forEach((todo) => (todo.style.display = "flex"));
+        break;
+
+        case "done":
+            todos.forEach((todo) =>
+              todo.classList.contains("done")
+                ? (todo.style.display = "flex")
+                : (todo.style.display = "none")
+            );
+        break;
+
+        case "todo":
+            todos.forEach((todo) =>
+              !todo.classList.contains("done")
+                ? (todo.style.display = "flex")
+                : (todo.style.display = "none")
+            );
+        break;
+
+        default:
+          break;
+    }
 }
 
 // Eventos
@@ -119,3 +175,39 @@ editForm.addEventListener("submit", (e) => {
     }
     toggleForms();
 });
+
+searchInput.addEventListener("keyup", (e) => {
+    
+    const search = e.target.value;
+
+    getSearchTodos(search)
+});
+
+eraseBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    searchInput.value = '';
+
+    searchInput.dispatchEvent(new Event("keyup")); //"força o disparo de um evento" 
+});
+
+filterBtn.addEventListener("change", (e) => {
+    const filterValue = e.target.value;
+
+    filterTodos(filterValue);
+})
+
+// Local Storage
+const getTodosLocalStorage = () => {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+    return todos;
+};
+
+const saveTodoLocalStorage = (todo) => {
+    const todos = getTodosLocalStorage();
+
+    todos.push(todo);
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+}

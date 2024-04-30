@@ -7,9 +7,15 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100vh; 
+    /* faz com que a imagem nao fique distorcendo conforme adiciona tarefas */
+}
+
 body {
     background-image: url(../img/espaco.jpg);
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
 }
 
 button {
