@@ -5,6 +5,10 @@ const noteInput = document.querySelector("#note-content");
 
 const addNoteBtn = document.querySelector(".add-note");
 
+const searchInput = document.querySelector("#search-input");
+
+const exportBtn =  document.querySelector("#export-notes");
+
 //Funções
 function showNotes() {
     cleanNotes();
@@ -74,12 +78,75 @@ function createNote(id,content,fixed){
     if(fixed){
         element.classList.add("fixed");
     }
+
     //eventos do elemento
+    element.querySelector("textarea").addEventListener("change", (e) => {
+        
+        const noteContent = e.target.value;
+
+        updateNote(id, noteContent);
+
+    });
+
     element.querySelector(".note i:nth-of-type(1)").addEventListener("click", () => {
         toggleFixNote(id);
     });
 
+    element.querySelector(".note i:nth-of-type(2)").addEventListener("click", () => {
+        deleteNote(id, element);
+    });
+
+    element.querySelector(".note i:nth-of-type(3)").addEventListener("click", () => {
+        copyNote(id);
+    });
+
     return element;
+}
+
+function deleteNote(id, element){
+
+    const notes = getNotes().filter((note) => note.id !== id);
+
+    saveNotes(notes);
+
+    notesContainer.removeChild(element);
+}
+
+function copyNote(id) {
+
+    const notes = getNotes();
+
+    const targetNote = notes.filter((note) => note.id === id)[0];
+
+    const noteObject = {
+        id: generateId(),
+        content: targetNote.content,
+        fixed: targetNote.fixed,
+    }
+
+    const noteElement =  createNote(
+        noteObject.id,
+        noteObject.content,
+        noteObject.fixed);
+
+    notesContainer.appendChild(noteElement);
+
+    notes.push(noteObject);
+
+    saveNotes(notes);
+
+    showNotes();
+}
+
+function updateNote(id, newContent) {
+
+    const notes = getNotes();
+
+    const targetNote =  notes.filter((note) => note.id === id)[0];
+
+    targetNote.content = newContent;
+
+    saveNotes(notes);
 }
 
 function toggleFixNote(id){
@@ -107,11 +174,55 @@ function saveNotes(notes) {
     localStorage.setItem("notes",JSON.stringify(notes))
 }
 
+function searchNotes(search){
+
+    const searchResults = getNotes().filter((note) => {
+       return note.content.includes(search);
+    });
+
+    if(search !== ""){
+        cleanNotes();
+
+        searchResults.forEach((note) => {
+            const noteElement = createNote(note.id, note.content, note.fixed);
+            notesContainer.appendChild(noteElement);
+        });
+
+        return;
+    }
+
+    cleanNotes();
+
+    showNotes();
+}
+
 function generateId(){
     return Math.floor(Math.random() * 5000);
 }
+
+function exportData() {
+    
+}
+
 //Eventos
 addNoteBtn.addEventListener("click", () => addNote());
+
+searchInput.addEventListener("keyup", (e) => {
+
+    const search = e.target.value;
+
+    searchNotes(search);
+})
+
+noteInput.addEventListener("keydown", (e) => {
+    if(e.key === "Enter"){
+        addNote();
+    }
+});
+
+exportBtn.addEventListener("click", () => {
+    exportData();
+})
 
 //Inicialização
 showNotes();
