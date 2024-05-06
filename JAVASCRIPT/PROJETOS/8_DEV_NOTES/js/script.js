@@ -202,6 +202,23 @@ function generateId(){
 
 function exportData() {
     
+    const notes = getNotes();
+
+    const csvString = [
+        ["ID","Conteúdo","Fixado?"],
+        ...notes.map((note) => [note.id,note.content,note.fixed]), //... para fazer ele retornar para dentro do array
+    ].map((e) => e.join(","))//transforma em um array e separa cada elemento por ,
+    .join("\n"); //faz mostrar a mesma string soq pula linha referenciando cada linha da tabela
+
+    const element = document.createElement("a"); //cria um elemento ficticio
+
+    element.href = "data:text/csv;charset=utf-8," + encodeURI(csvString);
+
+    element.target = "_blank";
+
+    element.download = "notes.csv"; // nome do arquivo
+
+    element.click(); //faz o elemento ser clicado
 }
 
 //Eventos
