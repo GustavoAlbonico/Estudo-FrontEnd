@@ -23,7 +23,7 @@
                      value="5"
                     />
                     <div class="reference-input">
-                        <input type="text" id="horizontal-value" name="horizontal-value">
+                        <input type="text" id="horizontal-value" name="horizontal-value" autocomplete="off">
                         <p>px</p>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                      value="5"
                     />
                     <div class="reference-input">
-                        <input type="text" id="vertical-value" name="vertical-value">
+                        <input type="text" id="vertical-value" name="vertical-value" autocomplete="off">
                         <p>px</p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                      value="10"
                     />
                     <div class="reference-input">
-                        <input type="text" id="blur-value" name="blur-value">
+                        <input type="text" id="blur-value" name="blur-value" autocomplete="off">
                         <p>px</p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                      value="5"
                     />
                     <div class="reference-input">
-                        <input type="text" id="spread-value" name="spread-value">
+                        <input type="text" id="spread-value" name="spread-value" autocomplete="off">
                         <p>px</p>
                     </div>
                 </div>
@@ -84,16 +84,18 @@
             <h2>Preview do efeito gerado:</h2>
             <!-- <div id="view-options">
                 <ul id="list-view-options">
-                    <li><span class="quadrado"></span></li>
-                    <li><span class="inset"></span></li>
+                    <li><span class="default"></span></li>
+                    <li><span class="parallelogram"></span></li>
+                    <li><span class="circle"></span></li>
+                    <li><span class="triangle"></span></li>
                     <li><span class="star"></span></li>
                     <li><span class="close"></span></li>
-                    <li><span class="circle"></span></li>
+                    <li><span class="message"></span></li>
                 </ul>
             </div> -->
-
-                <div id="box"></div>
-
+            <div id="box-container">
+                <div id="box" class="default"></div>
+            </div>
         </div>
     </div>
     <div id="generated-rule">
