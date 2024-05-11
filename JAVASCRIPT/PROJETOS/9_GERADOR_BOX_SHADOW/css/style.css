@@ -1,7 +1,12 @@
 * {
     font-family: "Verdana";
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    padding-bottom: 200px;
 }
 
 h2 {
@@ -25,6 +30,7 @@ h2 {
 /* Controles */
 .form-control {
     display: flex;
+    flex-direction: column;
     padding-bottom: 1.2rem;
     margin-bottom: 1.2rem;
     border-bottom: 1px dashed #ccc;
@@ -38,7 +44,7 @@ h2 {
 
 .range-input {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     flex: 1;
 }
 
@@ -47,7 +53,15 @@ h2 {
     appearance:  none;
     width: 100%;
     height: 10px;
-    background-image: radial-gradient(circle, #d16b6b, #d56d87, #d075a4, #c280be, #ad8dd4, #b990d7, #c592da, #d195dc, #fa8fc1, #ff939d, #ffa379, #fbba5f);
+    background-image: radial-gradient(
+        circle, 
+        #d16b6b, #d56d87, 
+        #d075a4, #c280be, 
+        #ad8dd4, #b990d7, 
+        #c592da, #d195dc,
+        #fa8fc1, #ff939d, 
+        #ffa379, #fbba5f
+    );
     outline: none;
     border-radius: 5px;
 }
@@ -58,7 +72,15 @@ h2 {
     height: 35px;
     width: 35px;
     cursor: pointer;
-    background-image: linear-gradient(to right, #110ddd, #c40098, #ec0055, #e84621, #ce8700, #a49b00, #72a925, #11b357, #00a172, #008d81, #007881, #076374);
+    background-image: linear-gradient(
+        to right top, 
+        #a8990a, #bd7a0a, 
+        #c85927, #c53742, 
+        #b41b5d, #a4146b, 
+        #8f1878, #732183, 
+        #632487, #51278b, 
+        #3a2a8e, #102d90
+    );
     clip-path: polygon(
         50% 0%, 
         61% 35%, 
@@ -88,8 +110,29 @@ h2 {
     border-radius: 1rem;
     margin-left: 1rem;
     text-align: center;
+    border: 2px solid #c466bc;
 }
 
 #box {
-    
+    width: 90.5%;
+    height: 83.5%;
+    background-color: #e9d60a;
+    clip-path: circle(50% at 50% 50%);
+}
+
+/* Area de geração */
+#generated-rule {
+    text-align: center;
+}
+
+#generated-rule p {
+    margin-bottom: 0.5rem;
+}
+
+#rules-area {
+    background-color: #d3d3d3;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #e9d60a;
+    padding: 1rem;
 }

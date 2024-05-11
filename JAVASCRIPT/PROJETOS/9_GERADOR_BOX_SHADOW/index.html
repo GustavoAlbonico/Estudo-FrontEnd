@@ -12,8 +12,8 @@
         <div id="controls-container">
             <h2>Configurações da Box Shadow:</h2>
             <div class="form-control">
+                <label for="horizontal">Deslocamento horizontal</label>
                 <div class="range-input">
-                    <label for="horizontal">Deslocamento horizontal:</label>
                     <input 
                      type="range" 
                      id="horizontal" 
@@ -22,15 +22,15 @@
                      max="100" 
                      value="5"
                     />
-                </div>
-                <div class="reference-input">
-                    <input type="text" id="horizontal-value" name="horizontal-value">
-                    <p>px</p>
+                    <div class="reference-input">
+                        <input type="text" id="horizontal-value" name="horizontal-value">
+                        <p>px</p>
+                    </div>
                 </div>
             </div>
             <div class="form-control">
+                <label for="vertical">Deslocamento vertical:</label>
                 <div class="range-input">
-                    <label for="vertical">Deslocamento vertical:</label>
                     <input 
                      type="range" 
                      id="vertical" 
@@ -39,15 +39,15 @@
                      max="100" 
                      value="5"
                     />
-                </div>
-                <div class="reference-input">
-                    <input type="text" id="vertical-value" name="vertical-value">
-                    <p>px</p>
+                    <div class="reference-input">
+                        <input type="text" id="vertical-value" name="vertical-value">
+                        <p>px</p>
+                    </div>
                 </div>
             </div>
             <div class="form-control">
+                <label for="blur">Intensidade do borrão (Blur):</label>
                 <div class="range-input">
-                    <label for="blur">Intensidade do borrão (Blur):</label>
                     <input 
                      type="range" 
                      id="blur" 
@@ -56,15 +56,15 @@
                      max="100" 
                      value="10"
                     />
-                </div>
-                <div class="reference-input">
-                    <input type="text" id="blur-value" name="blur-value">
-                    <p>px</p>
+                    <div class="reference-input">
+                        <input type="text" id="blur-value" name="blur-value">
+                        <p>px</p>
+                    </div>
                 </div>
             </div>
             <div class="form-control">
+                <label for="spread">Intensidade do espalhamento (Spred):</label>
                 <div class="range-input">
-                    <label for="spread">Intensidade do espalhamento (Spred):</label>
                     <input 
                      type="range" 
                      id="spread" 
@@ -73,16 +73,27 @@
                      max="100" 
                      value="5"
                     />
-                </div>
-                <div class="reference-input">
-                    <input type="text" id="spread-value" name="spread-value">
-                    <p>px</p>
+                    <div class="reference-input">
+                        <input type="text" id="spread-value" name="spread-value">
+                        <p>px</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="preview">
             <h2>Preview do efeito gerado:</h2>
-            <div id="box"></div>
+            <!-- <div id="view-options">
+                <ul id="list-view-options">
+                    <li><span class="quadrado"></span></li>
+                    <li><span class="inset"></span></li>
+                    <li><span class="star"></span></li>
+                    <li><span class="close"></span></li>
+                    <li><span class="circle"></span></li>
+                </ul>
+            </div> -->
+
+                <div id="box"></div>
+
         </div>
     </div>
     <div id="generated-rule">
