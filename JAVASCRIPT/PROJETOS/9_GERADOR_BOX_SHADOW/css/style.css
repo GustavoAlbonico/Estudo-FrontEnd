@@ -130,8 +130,9 @@ h2 {
 #input-color-value {
     all: initial;
     border: 1px solid #000;
-    width: 100px;
+    width: 80px;
     text-align: center;
+    border-radius: 5px;
 }
 
 #input-color-value:focus {
@@ -143,6 +144,7 @@ h2 {
 	border: none;
 	width: 32px;
 	height: 32px;
+    cursor: pointer;
 }
 #input-color::-webkit-color-swatch-wrapper {
 	padding: 0;
@@ -150,6 +152,7 @@ h2 {
 #input-color::-webkit-color-swatch {
     border: none;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #000;
 }
 
 #list-view-options{
@@ -169,6 +172,7 @@ h2 {
  border: 1px solid #000;
  opacity: 0.8;
  border-radius: 5px;
+ cursor: pointer;
  transition: 0.2s;
 }
 
@@ -182,6 +186,7 @@ h2 {
     width: 100%;
     height:100%;
     background-color: #e9d60a;
+    pointer-events: none;
 }
 
 #box-container {

@@ -12,7 +12,9 @@ class BoxShadowGenerator {
         previewBox,
         rule,
         webkitRule,
-        mozRule
+        mozRule,
+        inputColor,
+        inputColorRef
     ) {
         this.horizontal = horizontal;
         this.horizontalRef = horizontalRef;
@@ -26,6 +28,8 @@ class BoxShadowGenerator {
         this.rule = rule;
         this.webkitRule = webkitRule;
         this.mozRule = mozRule;
+        this.inputColor = inputColor;
+        this.inputColorRef = inputColorRef;
     }
 
     initialize() {
@@ -36,6 +40,8 @@ class BoxShadowGenerator {
 
         this.applyRule();
         this.showRule();
+        this.applyColor();
+
     }
 
     applyRule() {
@@ -47,6 +53,10 @@ class BoxShadowGenerator {
         this.rule.innerText = this.currentRule;
         this.webkitRule.innerText = this.currentRule;
         this.mozRule.innerText = this.currentRule;
+    }
+
+    applyColor() {
+        this.inputColorRef.value = this.inputColor.value;
     }
 }
 
@@ -67,6 +77,12 @@ const rule = document.querySelector("#rule span");
 const webkitRule = document.querySelector("#webkit-rule span");
 const mozRule = document.querySelector("#moz-rule span");
 
+const inputColor =  document.querySelector("#input-color");
+const inputColorRef =  document.querySelector("#input-color-value");
+
+const listViewOptionsElements = document.querySelectorAll("#list-view-options li span");
+const listViewOptions = document.querySelector("#list-view-options");
+
 const boxShadow = new BoxShadowGenerator(
     horizontal,
     horizontalRef,
@@ -79,8 +95,38 @@ const boxShadow = new BoxShadowGenerator(
     previewBox,
     rule,
     webkitRule,
-    mozRule
+    mozRule,
+    inputColor,
+    inputColorRef
 );
 
 boxShadow.initialize();
+
+function applyColorSelected(color) {
+    previewBox.style.backgroundColor = color;
+    listViewOptionsElements.forEach((e) => e.style.backgroundColor = color);
+}
+
+function applyFormatSelected(format){
+    previewBox.removeAttribute('class');
+    previewBox.setAttribute('class',format);
+}
 // Eventos
+
+inputColor.addEventListener("change", (e) => {
+    inputColorRef.value = e.target.value;
+    applyColorSelected(e.target.value);
+})
+
+inputColorRef.addEventListener("change", (e) => {
+    if(e.target.value.length === 7){
+        inputColor.value = e.target.value;
+        applyColorSelected(e.target.value);
+    }
+})
+
+listViewOptions.addEventListener("click" , (e) => {
+    if(e.target.tagName === "LI"){
+        applyFormatSelected(e.target.children[0].className);
+    }
+})
