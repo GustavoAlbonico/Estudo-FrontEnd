@@ -8,11 +8,19 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    <div id="generated-rule">
+        <h2>Copie e cole no seu arquivo de CSS:</h2>
+        <div id="rules-area">
+            <p id="rule">box-shadow: <span></span></p>
+            <p id="webkit-rule">-webkit-box-shadow: <span></span></p>
+            <p id="moz-rule">-moz-box-shadow: <span></span></p>
+        </div>
+    </div>
     <div id="box-shadow-generator">
         <div id="controls-container">
             <h2>Configurações da Box Shadow:</h2>
             <div class="form-control">
-                <label for="horizontal">Deslocamento horizontal</label>
+                <label for="horizontal">Deslocamento horizontal:</label>
                 <div class="range-input">
                     <input 
                      type="range" 
@@ -83,8 +91,17 @@
         <div id="preview">
             <h2>Preview do efeito gerado:</h2>
             <div id="input-color-container">
-                <input type="text" name="" id="input-color-value" maxlength="7">
-                <input type="color" name="" id="input-color" value="#e9d60a">
+                <div id="input-color-shadow-container">
+                    <label for="shadow">Sombra:</label>
+                    <input type="text" name="" id="input-color-shadow-value" maxlength="7">
+                    <input type="color" name="" id="input-color-shadow" value="#000000">
+                </div>
+                <div id="input-color-preview-container">
+                    <input type="text" name="" id="input-color-preview-value" maxlength="7">
+                    <input type="color" name="" id="input-color-preview" value="#ffffff">
+                    <input type="text" name="" id="input-color-value" maxlength="7">
+                    <input type="color" name="" id="input-color" value="#e9d60a">
+                </div>
             </div>
             <div id="view-options">
                 <ul id="list-view-options">
@@ -102,13 +119,6 @@
             </div>
         </div>
     </div>
-    <div id="generated-rule">
-        <h2>Copie e cole no seu arquivo de CSS:</h2>
-        <div id="rules-area">
-            <p id="rule">box-shadow: <span></span></p>
-            <p id="webkit-rule">-webkit-box-shadow: <span></span></p>
-            <p id="moz-rule">-moz-box-shadow: <span></span></p>
-        </div>
-    </div>
+    
 </body>
 </html>

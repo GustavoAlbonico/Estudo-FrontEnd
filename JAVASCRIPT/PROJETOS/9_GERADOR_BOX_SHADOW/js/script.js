@@ -14,7 +14,9 @@ class BoxShadowGenerator {
         webkitRule,
         mozRule,
         inputColor,
-        inputColorRef
+        inputColorRef,
+        inputColorPreview,
+        inputColorPreviewRef
     ) {
         this.horizontal = horizontal;
         this.horizontalRef = horizontalRef;
@@ -30,6 +32,8 @@ class BoxShadowGenerator {
         this.mozRule = mozRule;
         this.inputColor = inputColor;
         this.inputColorRef = inputColorRef;
+        this.inputColorPreview = inputColorPreview;
+        this.inputColorPreviewRef = inputColorPreviewRef;
     }
 
     initialize() {
@@ -41,7 +45,6 @@ class BoxShadowGenerator {
         this.applyRule();
         this.showRule();
         this.applyColor();
-
     }
 
     applyRule() {
@@ -57,6 +60,29 @@ class BoxShadowGenerator {
 
     applyColor() {
         this.inputColorRef.value = this.inputColor.value;
+        this.inputColorPreviewRef.value = this.inputColorPreview.value;
+    }
+
+    updateValue(type, value) {
+        switch(type) {
+            case "horizontal":
+                this.horizontalRef.value = value;
+        }
+        switch(type) {
+            case "vertical":
+                this.verticalRef.value = value;
+        }
+        switch(type) {
+            case "blur":
+                this.blurRef.value = value;
+        }
+        switch(type) {
+            case "spread":
+                this.spreadRef.value = value;
+        }
+
+        this.applyRule();
+        this.showRule();
     }
 }
 
@@ -73,12 +99,16 @@ const spreadRef = document.querySelector("#spread-value");
 
 const previewBox = document.querySelector("#box");
 
+const preview = document.querySelector("#preview");
+
 const rule = document.querySelector("#rule span");
 const webkitRule = document.querySelector("#webkit-rule span");
 const mozRule = document.querySelector("#moz-rule span");
 
 const inputColor =  document.querySelector("#input-color");
 const inputColorRef =  document.querySelector("#input-color-value");
+const inputColorPreview =  document.querySelector("#input-color-preview");
+const inputColorPreviewRef =  document.querySelector("#input-color-preview-value");
 
 const listViewOptionsElements = document.querySelectorAll("#list-view-options li span");
 const listViewOptions = document.querySelector("#list-view-options");
@@ -97,12 +127,14 @@ const boxShadow = new BoxShadowGenerator(
     webkitRule,
     mozRule,
     inputColor,
-    inputColorRef
+    inputColorRef,
+    inputColorPreview,
+    inputColorPreviewRef
 );
 
 boxShadow.initialize();
 
-function applyColorSelected(color) {
+function applyColorSelectedFormat(color) {
     previewBox.style.backgroundColor = color;
     listViewOptionsElements.forEach((e) => e.style.backgroundColor = color);
 }
@@ -111,22 +143,70 @@ function applyFormatSelected(format){
     previewBox.removeAttribute('class');
     previewBox.setAttribute('class',format);
 }
+
+function applyColorSelectedPreview(color) {
+    preview.style.backgroundColor = color;
+}
+
+function changeColor(color){
+    
+    const red = parseInt(color.slice(1,3)) || 1;
+    const green = parseInt(color.slice(3,5)) || 1;
+    const blue = parseInt(color.slice(5,7)) || 1;
+
+    // console.log(red,green,blue);
+
+    const luminosidade =  ( red * 299 + green * 587 + blue * 114) / 1000;
+
+    console.log(luminosidade);
+}
+
 // Eventos
 
-inputColor.addEventListener("change", (e) => {
+
+// format color
+inputColor.addEventListener("input", (e) => {
     inputColorRef.value = e.target.value;
-    applyColorSelected(e.target.value);
-})
+    applyColorSelectedFormat(e.target.value);
+});
 
 inputColorRef.addEventListener("change", (e) => {
     if(e.target.value.length === 7){
         inputColor.value = e.target.value;
-        applyColorSelected(e.target.value);
+        applyColorSelectedFormat(e.target.value);
     }
-})
+});
 
 listViewOptions.addEventListener("click" , (e) => {
     if(e.target.tagName === "LI"){
         applyFormatSelected(e.target.children[0].className);
     }
-})
+});
+
+//Preview color
+inputColorPreviewRef.addEventListener("change", (e) => {
+    if(e.target.value.length === 7){
+        inputColorPreview.value = e.target.value;
+        applyColorSelectedPreview(e.target.value);
+    }
+});
+
+inputColorPreview.addEventListener("input", (e) => {
+    inputColorPreviewRef.value = e.target.value;
+    applyColorSelectedPreview(e.target.value);
+    changeColor(e.target.value);
+});
+
+
+const inputsName = [horizontal,vertical,blur,spread];
+
+inputsName.forEach((inputName) => {
+    inputName.addEventListener("input", (e) => {
+        const value =  e.target.value;
+        boxShadow.updateValue(inputName.name, value);
+    });
+});
+
+
+
+
