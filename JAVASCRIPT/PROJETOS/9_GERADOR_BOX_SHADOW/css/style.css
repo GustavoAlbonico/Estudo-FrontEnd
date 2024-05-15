@@ -219,13 +219,12 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     /* filter: drop-shadow(10px 10px 10px #000); */
 }
 
 #box {
-    width: 73%;
-    height: 100%;
+    width: 268px;
+    height: 268px;
     background-color: #e9d60a;
     /* box-shadow: 10px 10px 10px 10px #000; */
 }
