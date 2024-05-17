@@ -102,6 +102,11 @@ h2 {
     border: 2px solid #102d90;
 }
 
+#inset {
+    height: 20px;
+    width: 20px;
+}
+
 #preview {
     display: flex;
     flex-direction: column;
@@ -305,19 +310,37 @@ h2 {
 
 /* white color */
 
-.input-color::-webkit-color-swatch {
+.input-color-white::-webkit-color-swatch {
     box-shadow: 0px 0px 1px 1px #fff;
 }
 
-.input-color {
+.input-color-white {
     border: 1px solid #fff;
 }
 
-.input-color-value:focus {
+.input-color-value-white:focus {
     outline: 0.5px solid #fff;
 }
 
-.list-view-options li{
+.list-view-options-white li{
     filter: drop-shadow(0px 0px 1px #fff);
    }
 
+
+@media (max-width: 425px) {
+
+    #box-shadow-generator{
+        flex-direction: column;
+    }
+
+    #controls-container,
+    #preview {
+        padding: 1rem 2rem;
+    }
+
+    #box {
+        width: 60%;
+        height: 200px;
+        margin: 0 auto;
+    }
+}
