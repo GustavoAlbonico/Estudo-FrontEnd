@@ -9,6 +9,11 @@ class BoxShadowGenerator {
         blurRef,
         spread,
         spreadRef,
+        shadowColor,
+        shadowColorRef,
+        opacity,
+        opacityRef,
+        inset,
         previewBox,
         rule,
         webkitRule,
@@ -26,6 +31,12 @@ class BoxShadowGenerator {
         this.blurRef = blurRef;
         this.spread = spread;
         this.spreadRef = spreadRef;
+        this.shadowColor = shadowColor;
+        this.shadowColorRef = shadowColorRef;
+        this.opacity = opacity;
+        this.opacityRef = opacityRef;
+        this.inset = inset;
+        this.insetRef = inset.checked;
         this.previewBox = previewBox;
         this.rule = rule;
         this.webkitRule = webkitRule;
@@ -41,6 +52,8 @@ class BoxShadowGenerator {
         this.verticalRef.value = this.vertical.value;
         this.blurRef.value = this.blur.value;
         this.spreadRef.value = this.spread.value;
+        this.shadowColorRef.value = this.shadowColor.value;
+        this.opacityRef.value = this.opacity.value;
 
         this.applyRule();
         this.showRule();
@@ -48,8 +61,12 @@ class BoxShadowGenerator {
     }
 
     applyRule() {
-        this.previewBox.style.boxShadow = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px #000000`
-        this.currentRule = this.previewBox.style.boxShadow;
+        const rgbValue = this.hexToRgb(this.shadowColorRef.value);
+
+        const shadowRule = `${this.insetRef ? "inset" : "" } ${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
+
+        this.previewBox.style.boxShadow = shadowRule;
+        this.currentRule = shadowRule;
     }
 
     showRule(){
@@ -67,22 +84,39 @@ class BoxShadowGenerator {
         switch(type) {
             case "horizontal":
                 this.horizontalRef.value = value;
-        }
-        switch(type) {
+            break;
+        
             case "vertical":
                 this.verticalRef.value = value;
-        }
-        switch(type) {
+            break;
+        
             case "blur":
                 this.blurRef.value = value;
-        }
-        switch(type) {
+            break;
+        
             case "spread":
                 this.spreadRef.value = value;
+            break;
+        
+            case "input-color-shadow":
+                this.shadowColorRef.value = value;
+            break;
+
+            case "opacity":
+                this.opacityRef.value = value;
+            break;
+
+            case "inset":
+                this.insetRef = value;
+            break;
         }
 
         this.applyRule();
         this.showRule();
+    }
+
+    hexToRgb(hex){
+        return `${("0x" + hex[1] + hex[2]) | 0}, ${("0x" + hex[3] + hex[4]) | 0}, ${("0x" + hex[5] + hex[6]) | 0}`;
     }
 }
 
@@ -110,6 +144,12 @@ const inputColorRef =  document.querySelector("#input-color-value");
 const inputColorPreview =  document.querySelector("#input-color-preview");
 const inputColorPreviewRef =  document.querySelector("#input-color-preview-value");
 
+const shadowColor = document.querySelector('#input-color-shadow');
+const shadowColorRef = document.querySelector('#input-color-shadow-value');
+const opacity = document.querySelector("#opacity");
+const opacityRef = document.querySelector("#opacity-value");
+const inset = document.querySelector("#inset")
+
 const listViewOptionsElements = document.querySelectorAll("#list-view-options li span");
 const listViewOptions = document.querySelector("#list-view-options");
 
@@ -122,6 +162,11 @@ const boxShadow = new BoxShadowGenerator(
     blurRef,
     spread,
     spreadRef,
+    shadowColor,
+    shadowColorRef,
+    opacity,
+    opacityRef,
+    inset,
     previewBox,
     rule,
     webkitRule,
@@ -148,18 +193,18 @@ function applyColorSelectedPreview(color) {
     preview.style.backgroundColor = color;
 }
 
-function changeColor(color){
+// function changeColor(color){
     
-    const red = parseInt(color.slice(1,3)) || 1;
-    const green = parseInt(color.slice(3,5)) || 1;
-    const blue = parseInt(color.slice(5,7)) || 1;
+//     const red = parseInt(color.slice(1,3)) || 1;
+//     const green = parseInt(color.slice(3,5)) || 1;
+//     const blue = parseInt(color.slice(5,7)) || 1;
 
-    // console.log(red,green,blue);
+//     // console.log(red,green,blue);
 
-    const luminosidade =  ( red * 299 + green * 587 + blue * 114) / 1000;
+//     const luminosidade =  ( red * 299 + green * 587 + blue * 114) / 1000;
 
-    console.log(luminosidade);
-}
+//     console.log(luminosidade);
+// }
 
 // Eventos
 
@@ -194,11 +239,10 @@ inputColorPreviewRef.addEventListener("change", (e) => {
 inputColorPreview.addEventListener("input", (e) => {
     inputColorPreviewRef.value = e.target.value;
     applyColorSelectedPreview(e.target.value);
-    changeColor(e.target.value);
 });
 
 
-const inputsName = [horizontal,vertical,blur,spread];
+const inputsName = [horizontal, vertical, blur, spread, shadowColor, opacity];
 
 inputsName.forEach((inputName) => {
     inputName.addEventListener("input", (e) => {
@@ -207,6 +251,25 @@ inputsName.forEach((inputName) => {
     });
 });
 
+inset.addEventListener("input", (e) => {
+    const value = e.target.checked;
+    boxShadow.updateValue("inset", value);
+});
 
+// Copiar regra
+const rulesArea = document.querySelector("#rules-area");
+const copyIntructions = document.querySelector("#copy-instructions");
+
+rulesArea.addEventListener("click", () => {
+    const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
+
+    navigator.clipboard.writeText(rules).then(() => {
+        copyIntructions.innerText = "Regra copiada com sucesso!";
+
+        setTimeout(() => {
+            copyIntructions.innerText = "Clique no quadro acima para copiar as regras"
+        },1000);
+    });
+});
 
 
