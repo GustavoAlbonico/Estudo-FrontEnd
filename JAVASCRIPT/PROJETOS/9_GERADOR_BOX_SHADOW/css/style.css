@@ -41,6 +41,16 @@ h2 {
     border-bottom: 1px dashed #ccc;
 }
 
+#containerCheckbox{
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+#containerCheckbox label {
+    margin: 0;
+}
+
 .form-control label {
     font-weight: bold;
     margin-bottom: 1rem;
@@ -224,7 +234,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* filter: drop-shadow(10px 10px 10px #000); */
+    filter: drop-shadow(10px 10px 10px #000);
 }
 
 #box {
@@ -325,6 +335,10 @@ h2 {
 .list-view-options-white li{
     filter: drop-shadow(0px 0px 1px #fff);
    }
+
+.hide {
+    display: none;
+}
 
 
 @media (max-width: 425px) {

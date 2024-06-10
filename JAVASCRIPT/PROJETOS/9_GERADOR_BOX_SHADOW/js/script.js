@@ -185,8 +185,22 @@ function applyColorSelectedFormat(color) {
 }
 
 function applyFormatSelected(format){
+    const containerCheckbox = document.querySelector('#containerCheckbox');
+    const containerSpread = document.querySelector('#containerSpread');
+    const containerOpacity = document.querySelector('#containerOpacity');
+    
     previewBox.removeAttribute('class');
     previewBox.setAttribute('class',format);
+
+    if(format !== 'default'){
+        containerCheckbox.classList.add('hide');
+        containerSpread.classList.add('hide');
+        containerOpacity.classList.add('hide');
+    }else {
+        containerCheckbox.classList.remove('hide');
+        containerSpread.classList.remove('hide');
+        containerOpacity.classList.remove('hide');
+    }
 }
 
 function applyColorSelectedPreview(color) {
