@@ -15,9 +15,9 @@ class BoxShadowGenerator {
         opacityRef,
         inset,
         previewBox,
-        rule,
-        webkitRule,
-        mozRule,
+        firstRule,
+        secondRule,
+        thirdRule,
         inputColor,
         inputColorRef,
         inputColorPreview,
@@ -38,9 +38,9 @@ class BoxShadowGenerator {
         this.inset = inset;
         this.insetRef = inset.checked;
         this.previewBox = previewBox;
-        this.rule = rule;
-        this.webkitRule = webkitRule;
-        this.mozRule = mozRule;
+        this.firstRule = firstRule;
+        this.secondRule = secondRule;
+        this.thirdRule = thirdRule;
         this.inputColor = inputColor;
         this.inputColorRef = inputColorRef;
         this.inputColorPreview = inputColorPreview;
@@ -55,12 +55,12 @@ class BoxShadowGenerator {
         this.shadowColorRef.value = this.shadowColor.value;
         this.opacityRef.value = this.opacity.value;
 
-        this.applyRule();
+        this.applyRuleBoxShadow();
         this.showRule();
         this.applyColor();
     }
 
-    applyRule() {
+    applyRuleBoxShadow() {
         const rgbValue = this.hexToRgb(this.shadowColorRef.value);
 
         const shadowRule = `${this.insetRef ? "inset" : "" } ${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
@@ -69,11 +69,24 @@ class BoxShadowGenerator {
         this.currentRule = shadowRule;
     }
 
+    // applyRuleFilterDropShadow(){
+    //     const rgbValue = this.hexToRgb(this.shadowColorRef.value);
+
+    //     const shadowRule = `drop-shadow(${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px rgba(${rgbValue}, ${this.opacityRef.value}))`;
+
+    //     this.previewBoxContainer.style.filter = shadowRule;
+    //     this.currentRule = shadowRule;
+    // }
+
     showRule(){
-        this.rule.innerText = this.currentRule;
-        this.webkitRule.innerText = this.currentRule;
-        this.mozRule.innerText = this.currentRule;
+        this.firstRule.innerText = `box-shadow: ${this.currentRule};`;
+        this.secondRule.innerText = `-webkit-box-shadow: ${this.currentRule};`;
+        this.thirdRule.innerText = `-moz-box-shadow: ${this.currentRule};`;
     }
+
+    // showRuleFilterDropShadow(){
+    //     this.rule.innerText = this.currentRule;
+    // }
 
     applyColor() {
         this.inputColorRef.value = this.inputColor.value;
@@ -111,7 +124,18 @@ class BoxShadowGenerator {
             break;
         }
 
-        this.applyRule();
+        this.applyRuleBoxShadow();
+        this.showRule();
+    }
+
+    clearValues(){
+        this.insetRef = "";
+        this.inset.checked = false;
+        this.spreadRef.value = 0;
+        this.spread.value = this.spreadRef.value
+        
+
+        this.applyRuleBoxShadow();
         this.showRule();
     }
 
@@ -135,9 +159,9 @@ const previewBox = document.querySelector("#box");
 
 const preview = document.querySelector("#preview");
 
-const rule = document.querySelector("#rule span");
-const webkitRule = document.querySelector("#webkit-rule span");
-const mozRule = document.querySelector("#moz-rule span");
+const firstRule = document.querySelector("#rule-first span");
+const secondRule = document.querySelector("#rule-second span");
+const thirdRule = document.querySelector("#rule-third span");
 
 const inputColor =  document.querySelector("#input-color");
 const inputColorRef =  document.querySelector("#input-color-value");
@@ -168,9 +192,9 @@ const boxShadow = new BoxShadowGenerator(
     opacityRef,
     inset,
     previewBox,
-    rule,
-    webkitRule,
-    mozRule,
+    firstRule,
+    secondRule,
+    thirdRule,
     inputColor,
     inputColorRef,
     inputColorPreview,
@@ -187,7 +211,7 @@ function applyColorSelectedFormat(color) {
 function applyFormatSelected(format){
     const containerCheckbox = document.querySelector('#containerCheckbox');
     const containerSpread = document.querySelector('#containerSpread');
-    const containerOpacity = document.querySelector('#containerOpacity');
+
     
     previewBox.removeAttribute('class');
     previewBox.setAttribute('class',format);
@@ -195,30 +219,16 @@ function applyFormatSelected(format){
     if(format !== 'default'){
         containerCheckbox.classList.add('hide');
         containerSpread.classList.add('hide');
-        containerOpacity.classList.add('hide');
+        boxShadow.clearValues();
     }else {
         containerCheckbox.classList.remove('hide');
         containerSpread.classList.remove('hide');
-        containerOpacity.classList.remove('hide');
     }
 }
 
 function applyColorSelectedPreview(color) {
     preview.style.backgroundColor = color;
 }
-
-// function changeColor(color){
-    
-//     const red = parseInt(color.slice(1,3)) || 1;
-//     const green = parseInt(color.slice(3,5)) || 1;
-//     const blue = parseInt(color.slice(5,7)) || 1;
-
-//     // console.log(red,green,blue);
-
-//     const luminosidade =  ( red * 299 + green * 587 + blue * 114) / 1000;
-
-//     console.log(luminosidade);
-// }
 
 // Eventos
 
