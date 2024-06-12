@@ -21,7 +21,8 @@ class BoxShadowGenerator {
         inputColor,
         inputColorRef,
         inputColorPreview,
-        inputColorPreviewRef
+        inputColorPreviewRef,
+        boxContainer
     ) {
         this.horizontal = horizontal;
         this.horizontalRef = horizontalRef;
@@ -45,6 +46,7 @@ class BoxShadowGenerator {
         this.inputColorRef = inputColorRef;
         this.inputColorPreview = inputColorPreview;
         this.inputColorPreviewRef = inputColorPreviewRef;
+        this.boxContainer= boxContainer;
     }
 
     initialize() {
@@ -69,14 +71,14 @@ class BoxShadowGenerator {
         this.currentRule = shadowRule;
     }
 
-    // applyRuleFilterDropShadow(){
-    //     const rgbValue = this.hexToRgb(this.shadowColorRef.value);
+    applyRuleFilterDropShadow(){
+        const rgbValue = this.hexToRgb(this.shadowColorRef.value);
 
-    //     const shadowRule = `drop-shadow(${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px rgba(${rgbValue}, ${this.opacityRef.value}))`;
+        const shadowRule = `drop-shadow(${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px rgba(${rgbValue}, ${this.opacityRef.value}))`;
 
-    //     this.previewBoxContainer.style.filter = shadowRule;
-    //     this.currentRule = shadowRule;
-    // }
+        this.boxContainer.style.filter = shadowRule;
+        this.currentRule = shadowRule;
+    }
 
     showRule(){
         this.firstRule.innerText = `box-shadow: ${this.currentRule};`;
@@ -84,16 +86,16 @@ class BoxShadowGenerator {
         this.thirdRule.innerText = `-moz-box-shadow: ${this.currentRule};`;
     }
 
-    // showRuleFilterDropShadow(){
-    //     this.rule.innerText = this.currentRule;
-    // }
+    showRuleFilterDropShadow(){
+        this.firstRule.innerText = `filter: ${this.currentRule};`;
+    }
 
     applyColor() {
         this.inputColorRef.value = this.inputColor.value;
         this.inputColorPreviewRef.value = this.inputColorPreview.value;
     }
 
-    updateValue(type, value) {
+    updateValueBoxShadow(type, value) {
         switch(type) {
             case "horizontal":
                 this.horizontalRef.value = value;
@@ -128,15 +130,47 @@ class BoxShadowGenerator {
         this.showRule();
     }
 
+    updateValueFilterDropShadow(type, value){
+        switch(type) {
+            case "horizontal":
+                this.horizontalRef.value = value;
+            break;
+        
+            case "vertical":
+                this.verticalRef.value = value;
+            break;
+        
+            case "blur":
+                this.blurRef.value = value;
+            break;
+        
+            case "input-color-shadow":
+                this.shadowColorRef.value = value;
+            break;
+
+            case "opacity":
+                this.opacityRef.value = value;
+            break;
+        }
+
+        this.applyRuleFilterDropShadow();
+        this.showRuleFilterDropShadow();
+    }
+
     clearValues(){
         this.insetRef = "";
         this.inset.checked = false;
         this.spreadRef.value = 0;
         this.spread.value = this.spreadRef.value
-        
 
         this.applyRuleBoxShadow();
-        this.showRule();
+        this.applyRuleFilterDropShadow();
+    }
+
+    clearRules(){
+        this.firstRule.innerText = "";
+        this.secondRule.innerText = "";
+        this.thirdRule.innerText = "";
     }
 
     hexToRgb(hex){
@@ -177,6 +211,8 @@ const inset = document.querySelector("#inset")
 const listViewOptionsElements = document.querySelectorAll("#list-view-options li span");
 const listViewOptions = document.querySelector("#list-view-options");
 
+const boxContainer = document.querySelector("#box-container");
+
 const boxShadow = new BoxShadowGenerator(
     horizontal,
     horizontalRef,
@@ -198,7 +234,8 @@ const boxShadow = new BoxShadowGenerator(
     inputColor,
     inputColorRef,
     inputColorPreview,
-    inputColorPreviewRef
+    inputColorPreviewRef,
+    boxContainer
 );
 
 boxShadow.initialize();
@@ -220,9 +257,13 @@ function applyFormatSelected(format){
         containerCheckbox.classList.add('hide');
         containerSpread.classList.add('hide');
         boxShadow.clearValues();
+        boxShadow.clearRules();
+        boxShadow.showRuleFilterDropShadow();
     }else {
         containerCheckbox.classList.remove('hide');
         containerSpread.classList.remove('hide');
+        boxShadow.showRule();
+        //FALTA LIMPAR  AS REGRAS AO VOLTAR PARA O QUADRADO, FAZER MUDAR OS VALORES AO MUDAR NO INPUT, MUDAR COR CONFORME COR DE FUNDO, ESTILIZAR COPIAR
     }
 }
 
@@ -271,13 +312,19 @@ const inputsName = [horizontal, vertical, blur, spread, shadowColor, opacity];
 inputsName.forEach((inputName) => {
     inputName.addEventListener("input", (e) => {
         const value =  e.target.value;
-        boxShadow.updateValue(inputName.name, value);
+
+        console.log();
+        if(previewBox.classList.contains("default")){
+            boxShadow.updateValueBoxShadow(inputName.name, value);
+        } else {
+            boxShadow.updateValueFilterDropShadow(inputName.name, value);
+        }
     });
 });
 
 inset.addEventListener("input", (e) => {
     const value = e.target.checked;
-    boxShadow.updateValue("inset", value);
+    boxShadow.updateValueBoxShadow("inset", value);
 });
 
 // Copiar regra
