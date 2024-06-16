@@ -46,7 +46,7 @@ class BoxShadowGenerator {
         this.inputColorRef = inputColorRef;
         this.inputColorPreview = inputColorPreview;
         this.inputColorPreviewRef = inputColorPreviewRef;
-        this.boxContainer= boxContainer;
+        this.boxContainer = boxContainer;
     }
 
     initialize() {
@@ -65,28 +65,30 @@ class BoxShadowGenerator {
     applyRuleBoxShadow() {
         const rgbValue = this.hexToRgb(this.shadowColorRef.value);
 
-        const shadowRule = `${this.insetRef ? "inset" : "" } ${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
+        const shadowRule = `${this.insetRef ? "inset" : ""} ${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
 
+        this.boxContainer.style.filter = 'none';
         this.previewBox.style.boxShadow = shadowRule;
         this.currentRule = shadowRule;
     }
 
-    applyRuleFilterDropShadow(){
+    applyRuleFilterDropShadow() {
         const rgbValue = this.hexToRgb(this.shadowColorRef.value);
 
         const shadowRule = `drop-shadow(${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px rgba(${rgbValue}, ${this.opacityRef.value}))`;
 
+        this.previewBox.style.boxShadow = 'none';
         this.boxContainer.style.filter = shadowRule;
         this.currentRule = shadowRule;
     }
 
-    showRule(){
+    showRule() {
         this.firstRule.innerText = `box-shadow: ${this.currentRule};`;
         this.secondRule.innerText = `-webkit-box-shadow: ${this.currentRule};`;
         this.thirdRule.innerText = `-moz-box-shadow: ${this.currentRule};`;
     }
 
-    showRuleFilterDropShadow(){
+    showRuleFilterDropShadow() {
         this.firstRule.innerText = `filter: ${this.currentRule};`;
     }
 
@@ -96,84 +98,98 @@ class BoxShadowGenerator {
     }
 
     updateValueBoxShadow(type, value) {
-        switch(type) {
+        switch (type) {
             case "horizontal":
                 this.horizontalRef.value = value;
-            break;
-        
+                this.horizontal.value = value;
+                break;
+
             case "vertical":
                 this.verticalRef.value = value;
-            break;
-        
+                this.vertical.value = value;
+                break;
+
             case "blur":
                 this.blurRef.value = value;
-            break;
-        
+                this.blur.value = value;
+                break;
+
             case "spread":
                 this.spreadRef.value = value;
-            break;
-        
+                this.spread.value = value;
+                break;
+
             case "input-color-shadow":
                 this.shadowColorRef.value = value;
-            break;
+                break;
+
+            case "input-color-shadow-value":
+                this.shadowColor.value = value;
+                break;
 
             case "opacity":
                 this.opacityRef.value = value;
-            break;
+                this.opacity.value = value;
+                break;
 
             case "inset":
                 this.insetRef = value;
-            break;
+                break;
         }
 
         this.applyRuleBoxShadow();
         this.showRule();
     }
 
-    updateValueFilterDropShadow(type, value){
-        switch(type) {
+    updateValueFilterDropShadow(type, value) {
+        switch (type) {
             case "horizontal":
                 this.horizontalRef.value = value;
-            break;
-        
+                this.horizontal.value = value;
+                break;
+
             case "vertical":
                 this.verticalRef.value = value;
-            break;
-        
+                this.vertical.value = value;
+                break;
+
             case "blur":
                 this.blurRef.value = value;
-            break;
-        
+                this.blur.value = value;
+                break;
+
             case "input-color-shadow":
                 this.shadowColorRef.value = value;
-            break;
+                break;
+
+            case "input-color-shadow-value":
+                this.shadowColor.value = value;
+                break;
 
             case "opacity":
                 this.opacityRef.value = value;
-            break;
+                this.opacity.value = value;
+                break;
         }
 
         this.applyRuleFilterDropShadow();
         this.showRuleFilterDropShadow();
     }
 
-    clearValues(){
+    clearValues() {
         this.insetRef = "";
         this.inset.checked = false;
         this.spreadRef.value = 0;
         this.spread.value = this.spreadRef.value
-
-        this.applyRuleBoxShadow();
-        this.applyRuleFilterDropShadow();
     }
 
-    clearRules(){
+    clearRules() {
         this.firstRule.innerText = "";
         this.secondRule.innerText = "";
         this.thirdRule.innerText = "";
     }
 
-    hexToRgb(hex){
+    hexToRgb(hex) {
         return `${("0x" + hex[1] + hex[2]) | 0}, ${("0x" + hex[3] + hex[4]) | 0}, ${("0x" + hex[5] + hex[6]) | 0}`;
     }
 }
@@ -197,10 +213,10 @@ const firstRule = document.querySelector("#rule-first span");
 const secondRule = document.querySelector("#rule-second span");
 const thirdRule = document.querySelector("#rule-third span");
 
-const inputColor =  document.querySelector("#input-color");
-const inputColorRef =  document.querySelector("#input-color-value");
-const inputColorPreview =  document.querySelector("#input-color-preview");
-const inputColorPreviewRef =  document.querySelector("#input-color-preview-value");
+const inputColor = document.querySelector("#input-color");
+const inputColorRef = document.querySelector("#input-color-value");
+const inputColorPreview = document.querySelector("#input-color-preview");
+const inputColorPreviewRef = document.querySelector("#input-color-preview-value");
 
 const shadowColor = document.querySelector('#input-color-shadow');
 const shadowColorRef = document.querySelector('#input-color-shadow-value');
@@ -245,32 +261,61 @@ function applyColorSelectedFormat(color) {
     listViewOptionsElements.forEach((e) => e.style.backgroundColor = color);
 }
 
-function applyFormatSelected(format){
+function applyFormatSelected(format) {
     const containerCheckbox = document.querySelector('#containerCheckbox');
     const containerSpread = document.querySelector('#containerSpread');
 
-    
-    previewBox.removeAttribute('class');
-    previewBox.setAttribute('class',format);
 
-    if(format !== 'default'){
+    previewBox.removeAttribute('class');
+    previewBox.setAttribute('class', format);
+
+    if (format !== 'default') {
         containerCheckbox.classList.add('hide');
         containerSpread.classList.add('hide');
         boxShadow.clearValues();
         boxShadow.clearRules();
+        boxShadow.applyRuleFilterDropShadow();
         boxShadow.showRuleFilterDropShadow();
-    }else {
+    } else {
         containerCheckbox.classList.remove('hide');
         containerSpread.classList.remove('hide');
+        boxShadow.applyRuleBoxShadow();
         boxShadow.showRule();
-        //FALTA LIMPAR  AS REGRAS AO VOLTAR PARA O QUADRADO, FAZER MUDAR OS VALORES AO MUDAR NO INPUT, MUDAR COR CONFORME COR DE FUNDO, ESTILIZAR COPIAR
     }
 }
 
 function applyColorSelectedPreview(color) {
     preview.style.backgroundColor = color;
+    changeColorsByContrast();
 }
 
+function changeColorsByContrast() {
+    const rgbValue = boxShadow.hexToRgb(inputColorPreviewRef.value);
+    const [red, green, blue] = rgbValue.split(', ');
+    const contraste = Math.floor((red * 299 + green * 587 + blue * 114) / 1000);
+
+    const elementsColor = document.querySelectorAll(".contrast-color");
+    const elementsBorder = document.querySelectorAll(".contrast-border");
+    const elementsBorderFilter = document.querySelectorAll("#list-view-options li");
+
+    const listElements = [elementsColor, elementsBorder, elementsBorderFilter];
+    const listClass = ['white-color-text', 'white-color-border', 'white-color-border-filter']
+
+    if (contraste < 128) {
+        for (let x = 0; x < listElements.length; x++) {
+            for (let element of listElements[x]) {
+                element.classList.add(listClass[x]);
+            }
+        }
+    } else {
+        for (let x = 0; x < listElements.length; x++) {
+            for (let element of listElements[x]) {
+                element.classList.remove(listClass[x]);
+            }
+        }
+    }
+
+}
 // Eventos
 
 
@@ -281,21 +326,21 @@ inputColor.addEventListener("input", (e) => {
 });
 
 inputColorRef.addEventListener("change", (e) => {
-    if(e.target.value.length === 7){
+    if (e.target.value.length === 7) {
         inputColor.value = e.target.value;
         applyColorSelectedFormat(e.target.value);
     }
 });
 
-listViewOptions.addEventListener("click" , (e) => {
-    if(e.target.tagName === "LI"){
+listViewOptions.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
         applyFormatSelected(e.target.children[0].className);
     }
 });
 
 //Preview color
 inputColorPreviewRef.addEventListener("change", (e) => {
-    if(e.target.value.length === 7){
+    if (e.target.value.length === 7) {
         inputColorPreview.value = e.target.value;
         applyColorSelectedPreview(e.target.value);
     }
@@ -308,18 +353,35 @@ inputColorPreview.addEventListener("input", (e) => {
 
 
 const inputsName = [horizontal, vertical, blur, spread, shadowColor, opacity];
+const inputsRefName = [horizontalRef, verticalRef, blurRef, spreadRef, shadowColorRef, opacityRef];
 
 inputsName.forEach((inputName) => {
     inputName.addEventListener("input", (e) => {
-        const value =  e.target.value;
-
-        console.log();
-        if(previewBox.classList.contains("default")){
+        const value = e.target.value;
+        if (previewBox.classList.contains("default")) {
             boxShadow.updateValueBoxShadow(inputName.name, value);
         } else {
             boxShadow.updateValueFilterDropShadow(inputName.name, value);
         }
     });
+});
+
+inputsRefName.forEach((inputName) => {
+    inputName.addEventListener("change", (e) => {
+        const value = e.target.value;
+        if (previewBox.classList.contains("default")) {
+            boxShadow.updateValueBoxShadow(inputName.name.replace("-value", ""), value);
+        } else {
+            boxShadow.updateValueFilterDropShadow(inputName.name.replace("-value", ""), value);
+        }
+    });
+});
+
+shadowColorRef.addEventListener("change", (e) => {
+    const value = e.target.value;
+    if (value.length === 7) {
+        boxShadow.updateValueBoxShadow("input-color-shadow-value", value);
+    }
 });
 
 inset.addEventListener("input", (e) => {
@@ -329,17 +391,22 @@ inset.addEventListener("input", (e) => {
 
 // Copiar regra
 const rulesArea = document.querySelector("#rules-area");
-const copyIntructions = document.querySelector("#copy-instructions");
+const copyMessage = document.querySelector("#copy-message");
 
-rulesArea.addEventListener("click", () => {
+let idTimeout;
+rulesArea.addEventListener("click", async () => {
     const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
 
-    navigator.clipboard.writeText(rules).then(() => {
-        copyIntructions.innerText = "Regra copiada com sucesso!";
+    if (copyMessage.classList.contains('hide-message')) copyMessage.classList.remove('hide-message');
 
-        setTimeout(() => {
-            copyIntructions.innerText = "Clique no quadro acima para copiar as regras"
-        },1000);
+    copyMessage.classList.add('show-message');
+
+    await navigator.clipboard.writeText(rules).then(() => {
+        clearTimeout(idTimeout);
+        idTimeout = setTimeout(() => {
+            copyMessage.classList.remove('show-message');
+            copyMessage.classList.add('hide-message');
+        }, 2000);
     });
 });
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
+
 <body>
     <div id="generated-rule" title="Clique para copiar">
         <h2>Copie e cole no seu arquivo de CSS:</h2>
         <div id="rules-area">
+            <span id="copy-message" class="hide-message">Conteudo copiado!</span>
             <p id="rule-first"><span></span></p>
             <p id="rule-second"><span></span></p>
             <p id="rule-third"><span></span></p>
@@ -22,14 +25,7 @@
             <div class="form-control">
                 <label for="horizontal">Deslocamento horizontal:</label>
                 <div class="range-input">
-                    <input 
-                     type="range" 
-                     id="horizontal" 
-                     name="horizontal" 
-                     min="-100" 
-                     max="100" 
-                     value="5"
-                    />
+                    <input type="range" id="horizontal" name="horizontal" min="-100" max="100" value="5" />
                     <div class="reference-input">
                         <input type="text" id="horizontal-value" name="horizontal-value" autocomplete="off">
                         <p>px</p>
@@ -39,14 +35,7 @@
             <div class="form-control">
                 <label for="vertical">Deslocamento vertical:</label>
                 <div class="range-input">
-                    <input 
-                     type="range" 
-                     id="vertical" 
-                     name="vertical" 
-                     min="-100" 
-                     max="100" 
-                     value="5"
-                    />
+                    <input type="range" id="vertical" name="vertical" min="-100" max="100" value="5" />
                     <div class="reference-input">
                         <input type="text" id="vertical-value" name="vertical-value" autocomplete="off">
                         <p>px</p>
@@ -56,14 +45,7 @@
             <div class="form-control">
                 <label for="blur">Intensidade do borrão (Blur):</label>
                 <div class="range-input">
-                    <input 
-                     type="range" 
-                     id="blur" 
-                     name="blur" 
-                     min="0" 
-                     max="100" 
-                     value="10"
-                    />
+                    <input type="range" id="blur" name="blur" min="0" max="100" value="10" />
                     <div class="reference-input">
                         <input type="text" id="blur-value" name="blur-value" autocomplete="off">
                         <p>px</p>
@@ -73,14 +55,7 @@
             <div class="form-control" id="containerSpread">
                 <label for="spread">Intensidade do espalhamento (Spred):</label>
                 <div class="range-input">
-                    <input 
-                     type="range" 
-                     id="spread" 
-                     name="spread" 
-                     min="-100" 
-                     max="100" 
-                     value="5"
-                    />
+                    <input type="range" id="spread" name="spread" min="-100" max="100" value="5" />
                     <div class="reference-input">
                         <input type="text" id="spread-value" name="spread-value" autocomplete="off">
                         <p>px</p>
@@ -90,17 +65,10 @@
             <div class="form-control">
                 <label for="opacity">Opacidade:</label>
                 <div class="range-input">
-                    <input 
-                     type="range" 
-                     id="opacity" 
-                     name="opacity" 
-                     min="0" 
-                     max="1" 
-                     value="1"
-                     step="0.01"
-                    />
+                    <input type="range" id="opacity" name="opacity" min="0" max="1" value="1" step="0.01" />
                     <div class="reference-input">
                         <input type="text" id="opacity-value" name="opacity-value" autocomplete="off">
+                        <p style="font-size: 20px;">%</p>
                     </div>
                 </div>
             </div>
@@ -110,18 +78,26 @@
             </div>
         </div>
         <div id="preview">
-            <h2>Preview do efeito gerado:</h2>
+            <h2 class="contrast-color">Preview do efeito gerado:</h2>
             <div id="input-color-container">
-                <div id="input-color-shadow-container">
-                    <label for="input-color-shadow">Sombra:</label>
-                    <input type="text" name="input-color-shadow-value" id="input-color-shadow-value" maxlength="7">
-                    <input type="color" name="input-color-shadow" id="input-color-shadow" value="#000000">
-                </div>
-                <div id="input-color-preview-container">
+                <div class="input-preview-container">
+                    <label for="input-color-preview" class="contrast-color">Cor de Fundo:</label>
                     <input type="text" name="input-color-preview-value" id="input-color-preview-value" maxlength="7">
-                    <input type="color" name="input-color-preview" id="input-color-preview" value="#ffffff">
-                    <input type="text" name="input-color-value" id="input-color-value" maxlength="7">
-                    <input type="color" name="input-color" id="input-color" value="#e9d60a">
+                    <input type="color" name="input-color-preview" class="contrast-border" id="input-color-preview"
+                        value="#ffffff">
+                </div>
+                <div id="input-preview-group">
+                    <div class="input-preview-container">
+                        <label for="input-color-shadow" class="contrast-color">Sombra:</label>
+                        <input type="text" name="input-color-shadow-value" id="input-color-shadow-value" maxlength="7">
+                        <input type="color" name="input-color-shadow" class="contrast-border" id="input-color-shadow"
+                            value="#000000">
+                    </div>
+                    <div class="input-preview-container">
+                        <label for="input-color" class="contrast-color">Formato:</label>
+                        <input type="text" name="input-color-value" id="input-color-value" maxlength="7">
+                        <input type="color" name="input-color" class="contrast-border" id="input-color" value="#e9d60a">
+                    </div>
                 </div>
             </div>
             <div id="view-options">
@@ -140,6 +116,6 @@
             </div>
         </div>
     </div>
-    
 </body>
+
 </html>
