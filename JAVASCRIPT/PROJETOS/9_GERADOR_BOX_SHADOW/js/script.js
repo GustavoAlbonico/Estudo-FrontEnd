@@ -395,7 +395,9 @@ const copyMessage = document.querySelector("#copy-message");
 
 let idTimeout;
 rulesArea.addEventListener("click", async () => {
-    const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
+    const rules = rulesArea.innerText.replace("Conteúdo copiado!","").replace(/^\s*\n/gm, "");
+    
+    copyMessage.classList.add('hide-message');
 
     if (copyMessage.classList.contains('hide-message')) copyMessage.classList.remove('hide-message');
 
