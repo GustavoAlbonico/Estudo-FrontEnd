@@ -37,6 +37,7 @@ import ExecuteFunction from './components/ExecuteFunction';
 // 15 - state lift
 import { useState } from 'react';
 import Message from './components/Message';
+import ChangeMessage from './components/ChangeMessage';
 
 function App() {
 
@@ -86,6 +87,7 @@ function App() {
       <ExecuteFunction myFunction={showMessage} />
       {/* 15 - state lift */}
       <Message msg={message}/>
+      <ChangeMessage handleMessage={handleMessage}/>
     </>
   )
 }
