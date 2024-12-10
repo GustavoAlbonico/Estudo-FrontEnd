@@ -8,7 +8,7 @@ import Contact from './routes/Contact.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 
 // 1 - configurando rotas
-import {createBrowserRouter, RouterProvider, Route, Navigate } from "react-router-dom";
+import {createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 //3 - componente base
 import Home from './routes/Home.jsx';
