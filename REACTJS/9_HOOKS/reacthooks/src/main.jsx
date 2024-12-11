@@ -6,6 +6,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Contact from './routes/Contact.jsx';
 import Home from './routes/Home.jsx';
+import HookUseContext from './components/HookUseContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HookUseContext>
+      <RouterProvider router={router} />
+    </HookUseContext>
   </StrictMode>,
 )
