@@ -1,0 +1,29 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Algum serviço",
+    "description": "Alguma descrição",
+    "price": 1600,
+    "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+}
+
+###
+GET http://localhost:3000/api/services
+
+###
+GET http://localhost:3000/api/services/675c7774f76d7eac6aaa02a9
+
+###
+DELETE http://localhost:3000/api/services/675c7774f76d7eac6aaa02a9
+
+###
+PUT http://localhost:3000/api/services/675c87dd9be0766db3c30ff7
+Content-Type: application/json
+
+{
+    "name": "Algum serviço2",
+    "description": "Alguma descrição",
+    "price": 1600,
+    "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+}
