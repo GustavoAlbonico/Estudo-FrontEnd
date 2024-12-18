@@ -27,3 +27,64 @@ Content-Type: application/json
     "price": 1600,
     "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
 }
+
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento",
+    "author": "Matheus",
+    "description": "Uma festa de aniversário",
+    "budged": 9000,
+    "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg",
+    "services": [
+        {
+            "name": "Algum serviço",
+            "description": "Alguma descrição",
+            "price": 1600,
+            "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+        },
+        {
+            "name": "Algum serviço 2",
+            "description": "Alguma descrição 2",
+            "price": 1800,
+            "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+        }
+    ]
+}
+
+###
+GET http://localhost:3000/api/parties
+
+###
+GET http://localhost:3000/api/parties/676312568fced5bb1a1cc78
+
+###
+DELETE http://localhost:3000/api/parties/676312568fced5bb1a1cc783
+
+###
+PUT http://localhost:3000/api/parties/676312fd8fced5bb1a1cc785
+Content-Type: application/json
+
+{
+    "title": "Meu evento",
+    "author": "Matheus",
+    "description": "Uma festa de aniversário",
+    "budged": 8000,
+    "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg",
+    "services": [
+        {
+            "name": "Algum serviço",
+            "description": "Alguma descrição",
+            "price": 1253,
+            "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+        },
+        {
+            "name": "Algum serviço 4",
+            "description": "Alguma descrição 2",
+            "price": 1800,
+            "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+        }
+    ]
+}
