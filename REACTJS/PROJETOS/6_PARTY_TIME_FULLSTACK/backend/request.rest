@@ -2,12 +2,11 @@ POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-    "name": "Algum serviço",
-    "description": "Alguma descrição",
-    "price": 1600,
-    "image": "https://i.pinimg.com/736x/05/86/cd/0586cd6613dc68b2bb200b0840fb50d3.jpg"
+  "name": "Decoração",
+  "description": "Escolha a decoração para sua festa, e nós a montamos.",
+  "price": 1400,
+  "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80"
 }
-
 ###
 GET http://localhost:3000/api/services
 
