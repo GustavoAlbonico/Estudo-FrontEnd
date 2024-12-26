@@ -13,7 +13,7 @@ const Home = () => {
   }
   useEffect(() => {
     loadParties();
-  })
+  },[]);
 
   if (!parties) return <p>Carregando...</p>;
 

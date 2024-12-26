@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./CreateParty.css";
 import "../Form.css";
-import useToast from "../../hook/useToast";
+import useToast from "../../hooks/useToast";
 
 const CreateParty = () => {
   const [services, setServices] = useState([]);
