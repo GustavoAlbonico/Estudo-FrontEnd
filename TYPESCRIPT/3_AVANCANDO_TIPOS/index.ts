@@ -90,3 +90,128 @@ function advancedGreeting(firstName: string, lastName?: string) {
 
 advancedGreeting('Matheus', 'Battisti')
 advancedGreeting('João')
+
+// 10 - union type
+function showBalance(balance: string | number) {
+    console.log(`O saldo da conta é R$${balance}`)
+}
+
+showBalance(500)
+showBalance('100')
+
+// 11 - mais sobre union types
+function showUserRole(role: boolean | string) {
+    if (typeof role === 'boolean') {
+        console.log('Usuário não aprovado!')
+    }
+    console.log(`O usuário é um: ${role}`)
+}
+
+showUserRole(false)
+showUserRole('Admin')
+showUserRole('Editor')
+
+// 12 - type alias
+type ID = number | string
+
+function showId(id: ID) {
+    console.log(`O ID é: ${id}`)
+}
+
+showId('15')
+showId(20)
+
+type User = {
+    name: string
+    surname: string
+}
+
+function userDetails(user: User) {
+    console.log(`Nome: ${user.name}`)
+    console.log(`Sobrenome: ${user.surname}`)
+}
+
+userDetails({ name: 'Matheus', surname: 'Battisti' })
+
+// 13 - interfaces
+interface Point {
+    x: number
+    y: number
+    z: number
+}
+
+function showCoords(obj: Point) {
+    console.log(`x: ${obj.x}, y: ${obj.y}, z: ${obj.z}`)
+}
+
+const itemCoords = {
+    x: 10,
+    y: 15,
+    z: 12,
+}
+
+showCoords(itemCoords)
+
+// 14 - interface x type alias
+
+interface Person {
+    name: string
+}
+
+const randomNumber = 10
+
+interface Person {
+    age: number
+}
+
+const somePerson: Person = { name: 'João', age: 25 }
+
+console.log(somePerson)
+
+type personType = {
+    name: string
+}
+
+// type personType = {
+//     age: number
+// }
+
+// 15 - literal types
+let test: 'testando'
+
+test = 'testando'
+
+// test = "opa"
+
+function showDirection(direction: 'left' | 'right' | 'center') {
+    console.log(`The direction is: ${direction}`)
+}
+
+showDirection('left')
+showDirection('center')
+//showDirection("up")
+
+// 16 - non-null assertion
+const p = document.getElementById('some-p')
+
+console.log(p!.innerText);
+
+// 17 - big int
+
+let n: bigint
+
+// n = 1
+
+n = 1000n
+
+// console.log(n + 1)
+
+console.log(n + 10n)
+
+// 17 - symbol
+
+let symbolA = Symbol('a')
+let symbolB = Symbol('a')
+
+console.log(symbolA === symbolB)
+
