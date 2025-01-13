@@ -1,8 +1,9 @@
-import React from 'react'
+// 3 - componente
+import React, { ReactElement } from 'react'
 
-function FirstComponent() {
+function FirstComponent(): ReactElement {
   return (
-    <div>FirstComponent</div>
+    <div>Meu primeiro componente</div>
   )
 }
 
