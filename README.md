@@ -48,6 +48,13 @@ Repositório criado durante o curso de "Formação Front-end - HTML, CSS, JavaSc
     <a href="https://gustavoalbonico.github.io/countdown-timer"><p><img src="img/countdown-timer.png" width="400"/></p></a>
 - [Blog com Axios](https://gustavoalbonico.github.io/blog-com-axios)
     <a href="https://gustavoalbonico.github.io/blog-com-axios"><p><img src="img/blog-com-axios.png" width="400"/></p></a>
+- [Memories](https://gustavoalbonico.github.io/memories)
+    <a href="https://gustavoalbonico.github.io/memories"><p><img src="img/memories.png" width="400"/></p></a>
 
 **Projetos com REACTTS:**
+
+- [Multistep Form TS](https://gustavoalbonico.github.io/multistep-form-react)
+    <a href="https://github.com/GustavoAlbonico/Estudo-FrontEnd/tree/main/REACTTS/multi-step-ts"><p><img src="img/multistep-form-react.png" width="400"/></p></a>
+- [GitHub Finder](https://gustavoalbonico.github.io/github-finder)
+    <a href="https://gustavoalbonico.github.io/github-finder"><p><img src="img/github-finder.png" width="400"/></p></a>
 
