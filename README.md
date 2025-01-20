@@ -48,8 +48,10 @@ Repositório criado durante o curso de "Formação Front-end - HTML, CSS, JavaSc
     <a href="https://gustavoalbonico.github.io/countdown-timer"><p><img src="img/countdown-timer.png" width="400"/></p></a>
 - [Blog com Axios](https://gustavoalbonico.github.io/blog-com-axios)
     <a href="https://gustavoalbonico.github.io/blog-com-axios"><p><img src="img/blog-com-axios.png" width="400"/></p></a>
-- [Memories](https://gustavoalbonico.github.io/memories)
+- [Memories](https://gustavoalbonico.github.io/memories) (FullStack | Servidor backend offline)
     <a href="https://gustavoalbonico.github.io/memories"><p><img src="img/memories.png" width="400"/></p></a>
+- [Party Time](https://gustavoalbonico.github.io/party-time) (FullStack | Servidor backend offline)
+    <a href="https://gustavoalbonico.github.io/party-time"><p><img src="img/party-time.png" width="400"/></p></a>
 
 **Projetos com REACTTS:**
 
